@@ -1,0 +1,186 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/Study/FALL2024/ECNG 4104/Project/Phase1/sim
+T_opt
+Z2 !s110 1731260863
+VB?TL1TYUQ23^AlHWUE78F1
+04 7 4 work prbs_tb fast 0
+=1-8c04ba9a6792-6730f1bf-158-4ea8
+Z3 !s124 OEM10U2 
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1731412838
+V8JKTIlW`lGa;GbMo833cN2
+04 10 4 work SPI_FSM_tb fast 0
+=1-8c04ba9a6792-67334365-2d4-4f48
+R3
+R4
+R5
+n@_opt1
+R6
+vprbs
+Z7 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1731260862
+!i10b 1
+!s100 DaT5THR<:Rz?XgHnh`7YO2
+ISfi6`Gj^H2dP0:m:b_HE]1
+S1
+R1
+w1731260000
+8../rtl/prbs.sv
+F../rtl/prbs.sv
+!i122 42
+L0 1 52
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1731260862.000000
+!s107 ../rtl/prbs.sv|
+!s90 -reportprogress|300|-sv|../rtl/prbs.sv|
+!i113 0
+Z10 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+vprbs_tb
+R7
+R2
+!i10b 1
+!s100 H0L946zXJf50XETMOiO9M1
+IdK<3H1`iImYMnmdXhDJ4S0
+S1
+R1
+w1731260854
+Z11 8prbs_tb.sv
+Z12 Fprbs_tb.sv
+!i122 43
+L0 1 79
+R8
+R9
+r1
+!s85 0
+31
+!s108 1731260863.000000
+Z13 !s107 prbs_tb.sv|
+Z14 !s90 -reportprogress|300|-sv|prbs_tb.sv|
+!i113 0
+R10
+R5
+vprbs_verify_tb
+R7
+!s110 1731258599
+!i10b 1
+!s100 J53I[;fkm`^gWG7@F;[3D0
+IDT8dNoa[984C@<fhUJlV@3
+S1
+R1
+w1731258548
+R11
+R12
+!i122 1
+L0 3 104
+R8
+R9
+r1
+!s85 0
+31
+!s108 1731258599.000000
+R13
+R14
+!i113 0
+R10
+R5
+vSPI_FSM
+R7
+Z15 !s110 1731412836
+!i10b 1
+!s100 Vc:_f@7U`NU@oc^z@bOzQ0
+Ig;4bhF=zcnk9J87<43bNM1
+S1
+R1
+w1731412795
+8../rtl/SPI_FSM.sv
+F../rtl/SPI_FSM.sv
+!i122 79
+L0 1 93
+R8
+R9
+r1
+!s85 0
+31
+Z16 !s108 1731412836.000000
+!s107 ../rtl/SPI_FSM.sv|
+!s90 -reportprogress|300|-sv|../rtl/SPI_FSM.sv|
+!i113 0
+R10
+R5
+n@s@p@i_@f@s@m
+vSPI_FSM_tb
+R7
+R15
+!i10b 1
+!s100 >OeJW1f6h9J:nA@XVRk5W1
+Idk2QF]gJB0e>E0C98?jJU1
+S1
+R1
+w1731277925
+8SPI_FSM_tb.sv
+FSPI_FSM_tb.sv
+!i122 80
+L0 1 90
+R8
+R9
+r1
+!s85 0
+31
+R16
+!s107 SPI_FSM_tb.sv|
+!s90 -reportprogress|300|-sv|SPI_FSM_tb.sv|
+!i113 0
+R10
+R5
+n@s@p@i_@f@s@m_tb
