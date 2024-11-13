@@ -9,7 +9,7 @@ module interleaver #(
     input  logic resetN,
     input  logic ready_mod,            // Ready from mod
     input  logic valid_fec,            // Valid from FEC
-    input  logic [Ncbps-1:0] data_in,  // Data from FEC
+    input  logic /*[Ncbps-1:0]*/ data_in,  // Data from FEC
 
     output logic [Ncbps-1:0] data_out,
     output logic ready_interleaver,   // Ready out from interleaver
@@ -27,10 +27,7 @@ always_ff @(posedge clk or negedge resetN) begin
         // data_out <= '0;
         k <= '0;
     end else if(interleave_en == 1'b1) begin
-        m <= ((Ncbps/d) * (k % d)) + k/d;
-        j <= (s * (m/s)) + ((m + Ncbps - ((d * m)/Ncbps)) % s);
         data_out[j] <= data_in;
-        
         if(k == 191) k <= 0;
         else         k <= k + 1;
 
@@ -38,11 +35,20 @@ always_ff @(posedge clk or negedge resetN) begin
 end
 
 always_comb begin
+    m = ((Ncbps/d) * (k % d)) + k/d;
+    j = (s * (m/s)) + ((m + Ncbps - ((d * m)/Ncbps)) % s);
+end
+
+always_comb begin
         if(valid_fec == 1'b1) begin
             interleave_en = 1'b1;
+            valid_interleaver = 1'b1;
         end else begin
             interleave_en = 1'b0;
+            valid_interleaver = 1'b0;
         end
+        ready_interleaver = 1'b1;
+        
 end
 
 // always_comb begin
