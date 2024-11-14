@@ -91,7 +91,7 @@ always_comb begin
             wren_B             = 1'b0;
             q_sel              = 1'b1;
 
-            bit_counter_resetN = 1'b0;
+            bit_counter_resetN = 1'b1;
             count_en           = 1'b1;
             
         end
@@ -102,14 +102,14 @@ always_comb begin
             wren_B             = 1'b1;
             q_sel              = 1'b0;
 
-            bit_counter_resetN = 1'b0;
+            bit_counter_resetN = 1'b1;
             count_en           = 1'b1;
         end
     endcase
 
     if (q_sel == 1'b1) begin
         q = q_B;
-    end begin
+    end else begin
         q = q_A;
     end
 end
