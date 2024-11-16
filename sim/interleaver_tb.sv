@@ -20,8 +20,8 @@ logic [$clog2(Ncbps)-1:0] data_out_index;
 logic                     ready_interleaver;
 logic                     valid_interleaver;
 
-logic [191:0] predicted_out = 192'h4B047DFA42F2A5D5F61C021A5851E9A309A24FD58086BD1E;  // Golden data
-logic [191:0] data_in_sequence = 192'h2833E48D392026D5B6DC5E4AF47ADD29494B6C89151348CA; // Golden data
+logic [0:191] predicted_out = 192'h4B047DFA42F2A5D5F61C021A5851E9A309A24FD58086BD1E;  // Golden data
+logic [0:191] data_in_sequence = 192'h2833E48D392026D5B6DC5E4AF47ADD29494B6C89151348CA; // Golden data
 // Instantiate the interleaver module
 interleaver #(
     .Ncbps(Ncbps),
@@ -56,26 +56,49 @@ initial begin
     
     #10;
     resetN = 1;
-
+    display_header();
     // Test sequence
-    $display("Starting test...");
     valid_fec = 1;
-    while(i < 192) begin
-        data_in = data_in_sequence[i];
-        #5;
-        $display("data_out[%0d] = %h, predicted_out[%0d] = %h", data_out_index, data_out, data_out_index, predicted_out[data_out_index]);
-        if(data_out != predicted_out[data_out_index]) begin
-            $display("Error: data_out[%0d] = %h, predicted_out[%0d] = %h", i, data_out, i, predicted_out[data_out_index]);
-            // $display("Test failed.");
-            // $stop;
+    repeat(10) begin
+        $display("Starting test...");
+        i = 0;
+        while(i < 192) begin
+            data_in = data_in_sequence[i];
+            #5;
+            $display("data_out[%0d] = %h, predicted_out[%0d] = %h", data_out_index, data_out, data_out_index, predicted_out[data_out_index]);
+            // display_cell();
+            if(data_out != predicted_out[data_out_index]) begin
+                $display("Error: data_out[%0d] = %h, predicted_out[%0d] = %h", i, data_out, i, predicted_out[data_out_index]);
+                // $display("Test failed.");
+                // $stop;
+            end
+            i++;
+            #5;
+            
         end
-        i++;
-        #5;
-        
+        display_footer();
     end
-
     $display("Test completed.");
+
     $stop;
 end
 
+
+task display_header();
+    $display("===================================================");
+    $display("=            Interleaver Testbench               =");
+    $display("===================================================");
+    // $display("Data in   Data_in_index   Data out   Data_out_index   Expected_Data_out  Expected_Data_out_index");
+
+endtask
+
+task display_footer();
+    $display("===================================================");
+    $display("=            End of Interleaver Testbench         =");
+    $display("===================================================");
+endtask
+
+task display_cell();
+    $display("%b       %3d   %b   %3d   %b   %3d", data_in, data_out_index, data_out, data_out_index, predicted_out[data_out_index], data_out_index);
+endtask
 endmodule
