@@ -6,9 +6,11 @@ module PPBuffer (
     // input  logic q_A,
     input  logic [8:0] rdaddress,
     // input  logic wrdata_B,
-    input  logic       valid_prev,
+    input  logic       valid_in,
 
-    output logic       q
+    output logic       q,
+    output logic       valid_out,
+    output logic       ready_out
 );
 
 logic q_A;
@@ -21,13 +23,15 @@ logic wren_B;
 PPBufferControl BufferControl (
     .clk(clk),
     .resetN(resetN),
-    .valid_prev(valid_prev),
+    .valid_in(valid_in),
     .q_A(q_A),
     .q_B(q_B),
     .rden_A(rden_A),
     .rden_B(rden_B),
     .wren_A(wren_A),
     .wren_B(wren_B),
+    .ready_out(ready_out),
+    .valid_out(valid_out),
     .q(q)
 );
 

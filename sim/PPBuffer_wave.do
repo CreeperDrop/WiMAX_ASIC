@@ -17,8 +17,11 @@ add wave -noupdate /PPBuffer_tb/dut/BufferControl/q_sel
 add wave -noupdate /PPBuffer_tb/dut/BufferControl/bit_counter
 add wave -noupdate /PPBuffer_tb/valid_prev
 add wave -noupdate /PPBuffer_tb/dut/valid_prev
+add wave -noupdate /PPBuffer_tb/valid_out
+add wave -noupdate /PPBuffer_tb/ready_out
+add wave -noupdate /PPBuffer_tb/dut/BufferControl/clear_counter
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {27642 ps} 0}
+WaveRestoreCursors {{Cursor 1} {28077 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100

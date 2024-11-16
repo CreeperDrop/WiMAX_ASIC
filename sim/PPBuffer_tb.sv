@@ -7,8 +7,10 @@ module PPBuffer_tb();
     logic [8:0] wraddress;
     logic wrdata;
     logic [8:0] rdaddress;
-    logic valid_prev;
+    logic valid_in;
     logic q;
+    logic valid_out;
+    logic ready_out;
 
     parameter CLK_PERIOD = 10;
     parameter BUFFER_SIZE = 192; // Maximum buffer size
@@ -22,7 +24,9 @@ module PPBuffer_tb();
         .wraddress(wraddress),
         .wrdata(wrdata),
         .rdaddress(rdaddress),
-        .valid_prev(valid_prev),
+        .valid_in(valid_in),
+        .valid_out(valid_out),
+        .ready_out(ready_out),
         .q(q)
     );
 
@@ -43,10 +47,18 @@ module PPBuffer_tb();
     initial begin
         // Reset sequence
         resetN = 0;
-        #(CLK_PERIOD/2);
+        #(CLK_PERIOD);
         resetN = 1;
-        #(CLK_PERIOD/2);
-        valid_prev = 1;
+
+        valid_in = 1;
+        wraddress = 0;
+        wrdata = data_in[0];
+        rdaddress = 0;
+        // #(CLK_PERIOD/2);
+        while(!ready_out) begin
+            #CLK_PERIOD;
+        end
+
         // // Test Case 1: Fill Bank A
         // valid_prev = 1;
         // for(int i = 0; i < BUFFER_SIZE; i++) begin
@@ -99,7 +111,7 @@ module PPBuffer_tb();
         // data_out = 'x;
 
         // Test Case 4: Check if streaming is possible
-        repeat(2) begin
+        repeat(10) begin
             for(int i = 0; i < BUFFER_SIZE; i++) begin
                 wraddress = i;
                 wrdata = data_in[i];
@@ -113,7 +125,7 @@ module PPBuffer_tb();
         // $display("Test 4: Data out: 0x%h", data_out);
         $stop;
     end
-    
+
     // Timeout to avoid infinite simulation
     initial begin
         #100000;

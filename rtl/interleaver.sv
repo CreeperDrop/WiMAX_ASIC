@@ -5,15 +5,16 @@ module interleaver #(
     parameter d     = 16
 )
 (
-    input  logic clk,
-    input  logic resetN,
-    input  logic ready_mod,            // Ready from mod
-    input  logic valid_fec,            // Valid from FEC
-    input  logic /*[Ncbps-1:0]*/ data_in,  // Data from FEC
+    input  logic                     clk,
+    input  logic                     resetN,
+    input  logic                     ready_mod,            // Ready from mod
+    input  logic                     valid_fec,            // Valid from FEC
+    input  logic                     data_in,              // Data from FEC
 
-    output logic [Ncbps-1:0] data_out,
-    output logic ready_interleaver,   // Ready out from interleaver
-    output logic valid_interleaver    // Valid out from interleaver
+    output logic                     data_out,
+    output logic [$clog2(Ncbps)-1:0] data_out_index,
+    output logic                     ready_interleaver,   // Ready out from interleaver
+    output logic                     valid_interleaver    // Valid out from interleaver
 );
 
 logic [$clog2(Ncbps)-1:0] k;
@@ -24,10 +25,11 @@ logic                     interleave_en;
 
 always_ff @(posedge clk or negedge resetN) begin
     if(resetN == 1'b0) begin
-        // data_out <= '0;
+        data_out <= '0;
         k <= '0;
     end else if(interleave_en == 1'b1) begin
-        data_out[j] <= data_in;
+        data_out <= data_in;
+        data_out_index <= j;
         if(k == 191) k <= 0;
         else         k <= k + 1;
 
@@ -51,16 +53,5 @@ always_comb begin
         
 end
 
-// always_comb begin
-//     // data_out = '0; 
-//     for(k = 0; k < Ncbps; k++) begin
-//         m = ((Ncbps/d) * (k % d)) + k/d;
-
-//         j = (s * (m/s)) + ((m + Ncbps - ((d * m)/Ncbps)) % s);
-
-//         data_out[j] = data_in[k];
-//     end
-    
-// end
 
 endmodule

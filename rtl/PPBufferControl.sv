@@ -14,9 +14,10 @@ module PPBufferControl (
     // input  logic rdaddress_B,
     output logic rden_B,
     input  logic q_B,
-     
-    input  logic valid_prev,
-    // input  logic ready_next,
+    
+    input  logic valid_in,
+    output logic ready_out,
+    output logic valid_out,
     output logic q
 
 );
@@ -27,8 +28,13 @@ logic       bit_counter_resetN;
 logic [7:0] bit_counter;
 logic       count_en;
 
+logic       clear_counter_resetN;
+logic       clear_counter;
+logic       clear_count_en;
+
 typedef enum logic [1:0] {
     IDLE,
+    CLEAR,
     WRITE_A,
     WRITE_B
 } BufferControlState_t;
@@ -48,10 +54,13 @@ end
 always_comb begin
     case(state)
         IDLE: begin
-            if(valid_prev == 1'b1) begin
+            state_next = CLEAR;
+        end
+        CLEAR: begin
+            if((clear_counter && valid_in) == 1'b1)  begin
                 state_next = WRITE_A;
             end else begin
-                state_next = IDLE;
+                state_next = CLEAR;
             end
         end
         WRITE_A: begin
@@ -68,6 +77,7 @@ always_comb begin
                 state_next = WRITE_B;
             end
         end
+    
     endcase
 end
 
@@ -83,6 +93,25 @@ always_comb begin
 
             bit_counter_resetN = 1'b0;
             count_en           = 1'b0;
+            clear_count_en     = 1'b0;
+            clear_counter_resetN = 1'b0;
+            valid_out          = 1'b0;
+            ready_out          = 1'b0;
+        end
+        CLEAR: begin
+            rden_A             = 1'b1;
+            rden_B             = 1'b1;
+            wren_A             = 1'b1;
+            wren_B             = 1'b1;
+            q_sel              = 1'b0;
+
+            bit_counter_resetN = 1'b0;
+            count_en           = 1'b0;
+            clear_count_en     = 1'b1;
+            clear_counter_resetN = 1'b1;
+
+            valid_out          = 1'b0;
+            ready_out          = (clear_counter == 1'b1) ? 1'b1 : 1'b0;
         end
         WRITE_A: begin
             rden_A             = 1'b0;
@@ -93,6 +122,11 @@ always_comb begin
 
             bit_counter_resetN = 1'b1;
             count_en           = 1'b1;
+            clear_count_en     = 1'b0;
+            clear_counter_resetN = 1'b0;
+
+            valid_out          = 1'b1;
+            ready_out          = 1'b1;
             
         end
         WRITE_B: begin
@@ -104,6 +138,11 @@ always_comb begin
 
             bit_counter_resetN = 1'b1;
             count_en           = 1'b1;
+            clear_count_en     = 1'b0;
+            clear_counter_resetN = 1'b0;
+
+            valid_out          = 1'b1;
+            ready_out          = 1'b1;
         end
     endcase
 
@@ -123,6 +162,16 @@ always_ff @(posedge clk or negedge bit_counter_resetN) begin
         else                   bit_counter <= bit_counter + 1;
 
     end
-
 end
+
+always_ff @(posedge clk or negedge clear_counter_resetN) begin
+    if(clear_counter_resetN == 1'b0) begin
+        clear_counter <= '0;
+    end else if(clear_count_en == 1'b1) begin
+
+        if(clear_counter == 1) clear_counter <= '0;
+        else                   clear_counter <= clear_counter + 1;
+    end
+end
+
 endmodule
