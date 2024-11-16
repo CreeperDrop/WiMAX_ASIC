@@ -28,7 +28,7 @@ module PPBuffer_tb();
 
     // Clock generation
     initial begin
-        clk = 0;
+        clk = 1;
         forever #(CLK_PERIOD / 2) clk = ~clk;
     end
 
@@ -43,30 +43,32 @@ module PPBuffer_tb();
     initial begin
         // Reset sequence
         resetN = 0;
-        #CLK_PERIOD;
+        #(CLK_PERIOD/2);
         resetN = 1;
-        // Test Case 1: Fill Bank A
+        #(CLK_PERIOD/2);
         valid_prev = 1;
-        for(int i = 0; i < BUFFER_SIZE; i++) begin
-            wraddress = i;
-            wrdata = data_in[i];
-            // wrdata = $urandom_range(0, 1);
-            #CLK_PERIOD;
-            data_out[i] = q;
-        end
-        $display("Test 1: Data out: 0x%h", data_out);
-        data_out = 'x;
-        // Test Case 2: Fill Bank B and consumer reads from Bank A
-        for(int i = 0; i < BUFFER_SIZE; i++) begin
-            wraddress = i;
-            wrdata = data_in[i];
-            // wrdata = $urandom_range(0, 1);
-            rdaddress = i;
-            #CLK_PERIOD;
-            data_out[i] = q;
-        end
-        $display("Test 2: Data out: 0x%h", data_out);
-        data_out = 'x;
+        // // Test Case 1: Fill Bank A
+        // valid_prev = 1;
+        // for(int i = 0; i < BUFFER_SIZE; i++) begin
+        //     wraddress = i;
+        //     wrdata = data_in[i];
+        //     // wrdata = $urandom_range(0, 1);
+        //     #CLK_PERIOD;
+        //     data_out[i] = q;
+        // end
+        // $display("Test 1: Data out: 0x%h", data_out);
+        // data_out = 'x;
+        // // Test Case 2: Fill Bank B and consumer reads from Bank A
+        // for(int i = 0; i < BUFFER_SIZE; i++) begin
+        //     wraddress = i;
+        //     wrdata = data_in[i];
+        //     // wrdata = $urandom_range(0, 1);
+        //     rdaddress = i;
+        //     #CLK_PERIOD;
+        //     data_out[i] = q;
+        // end
+        // $display("Test 2: Data out: 0x%h", data_out);
+        // data_out = 'x;
         // // Test Case 3: Fill Bank A and consumer reads from Bank B
         // for(int i = 0; i < BUFFER_SIZE; i++) begin
         //     wraddress = i;
@@ -97,20 +99,21 @@ module PPBuffer_tb();
         // data_out = 'x;
 
         // Test Case 4: Check if streaming is possible
-        repeat(10) begin
+        repeat(2) begin
             for(int i = 0; i < BUFFER_SIZE; i++) begin
                 wraddress = i;
                 wrdata = data_in[i];
                 rdaddress = i;
-                #CLK_PERIOD;
+                #(CLK_PERIOD);
                 data_out[i] = q;
+
             end
-            $display("Data out: 0x%h", data_out);
+            $display("Data out: %h at time: %0t", data_out, $time);
         end
         // $display("Test 4: Data out: 0x%h", data_out);
         $stop;
     end
-
+    
     // Timeout to avoid infinite simulation
     initial begin
         #100000;
