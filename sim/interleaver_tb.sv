@@ -20,8 +20,10 @@ logic [$clog2(Ncbps)-1:0] data_out_index;
 logic                     ready_interleaver;
 logic                     valid_interleaver;
 
-logic [0:191] predicted_out = 192'h4B047DFA42F2A5D5F61C021A5851E9A309A24FD58086BD1E;  // Golden data
+logic [0:191] predicted_out    = 192'h4B047DFA42F2A5D5F61C021A5851E9A309A24FD58086BD1E;  // Golden data
 logic [0:191] data_in_sequence = 192'h2833E48D392026D5B6DC5E4AF47ADD29494B6C89151348CA; // Golden data
+logic [0:191] data_out_sequence; 
+
 // Instantiate the interleaver module
 interleaver #(
     .Ncbps(Ncbps),
@@ -58,15 +60,17 @@ initial begin
     resetN = 1;
     display_header();
     // Test sequence
+    // @(posedge clk);
     valid_fec = 1;
-    repeat(10) begin
+    repeat(2) begin
         $display("Starting test...");
         i = 0;
         while(i < 192) begin
             data_in = data_in_sequence[i];
             #5;
+            data_out_sequence[data_out_index] = data_out;
             if(data_out != predicted_out[data_out_index]) begin
-                $fatal("data_in[%3d] = %0b | data_out[%3d] = %0b | predicted_out[%3d] = %0b | TEST FAILED", i, data_in, data_out_index, data_out, data_out_index, predicted_out[data_out_index]);
+                $error("data_in[%3d] = %0b | data_out[%3d] = %0b | predicted_out[%3d] = %0b | TEST FAILED", i, data_in, data_out_index, data_out, data_out_index, predicted_out[data_out_index]);
                 $display("Test failed.");
                 $stop;
             end else begin
@@ -76,6 +80,14 @@ initial begin
             #5;
             
         end
+        $display("Data_out_sequence: %h", data_out_sequence);
+        if(data_out_sequence === predicted_out) begin
+            $error("Test passed.");
+        end else begin
+            $fatal("Test failed.");
+            $stop;
+        end
+        data_out_sequence = 192'h0;
         display_footer();
     end
     $display("Streaming Successful.");

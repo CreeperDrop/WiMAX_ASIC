@@ -25,12 +25,10 @@ logic                     interleave_en;
 
 always_ff @(posedge clk or negedge resetN) begin
     if(resetN == 1'b0) begin
-        data_out <= '0;
         k <= '0;
-        data_out_index <= '0;
+
     end else if(interleave_en == 1'b1) begin
-        data_out <= data_in;
-        data_out_index <= j;
+
         if(k == 191) k <= 0;
         else         k <= k + 1;
 
@@ -40,6 +38,8 @@ end
 always_comb begin
     m = ((Ncbps/d) * (k % d)) + k/d;
     j = (s * (m/s)) + ((m + Ncbps - ((d * m)/Ncbps)) % s);
+    data_out_index = j;
+    data_out = data_in;
 end
 
 always_comb begin
