@@ -12,7 +12,7 @@ module interleaver #(
     input  logic                     data_in,              // Data from FEC
 
     output logic                     data_out,
-    output logic [$clog2(Ncbps)-1:0] data_out_index,
+    output logic [8:0] data_out_index,
     output logic                     ready_interleaver,   // Ready out from interleaver
     output logic                     valid_interleaver    // Valid out from interleaver
 );
@@ -27,6 +27,7 @@ always_ff @(posedge clk or negedge resetN) begin
     if(resetN == 1'b0) begin
         data_out <= '0;
         k <= '0;
+        data_out_index <= '0;
     end else if(interleave_en == 1'b1) begin
         data_out <= data_in;
         data_out_index <= j;

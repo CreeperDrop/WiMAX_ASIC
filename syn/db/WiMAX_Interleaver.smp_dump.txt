@@ -1,0 +1,7 @@
+
+State Machine - |interleaver_top|PPBuffer:PingPongBuffer_inst|PPBufferControl:BufferControl|state
+Name state.WRITE_B state.WRITE_A state.CLEAR state.IDLE 
+state.IDLE 0 0 0 0 
+state.CLEAR 0 0 1 1 
+state.WRITE_A 0 1 0 1 
+state.WRITE_B 1 0 0 1 

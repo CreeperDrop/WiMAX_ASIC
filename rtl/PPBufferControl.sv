@@ -156,11 +156,14 @@ end
 always_ff @(posedge clk or negedge bit_counter_resetN) begin
     if(bit_counter_resetN == 1'b0) begin
         bit_counter <= '0;
+        // valid_out <= 1'b0;
     end else if(count_en == 1'b1) begin
-
-        if(bit_counter == 191) bit_counter <= '0;
-        else                   bit_counter <= bit_counter + 1;
-
+        if(bit_counter == 191) begin 
+            bit_counter <= '0;
+            // valid_out <= 1'b1;
+        end else begin
+            bit_counter <= bit_counter + 1;
+        end
     end
 end
 

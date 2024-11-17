@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sun Nov 10 13:32:52 2024
+Analysis & Synthesis Status : Successful - Sun Nov 17 15:45:01 2024
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : WiMAX_Interleaver
-Top-level Entity Name : interleaver
+Top-level Entity Name : interleaver_top
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 0
-Total pins : 384
+Total registers : 40
+Total pins : 8
 Total virtual pins : 0
-Total block memory bits : 0
+Total block memory bits : 1,024
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

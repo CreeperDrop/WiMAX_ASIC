@@ -170,6 +170,58 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -179,88 +231,136 @@ R0
 cModel Technology
 Z1 dD:/Study/FALL2024/ECNG 4104/Project/Phase1/sim
 T_opt
-Z2 !s110 1731505977
-V`XDPN<?SONS8:S^N>;^K11
-04 16 4 work out_interlace_tb fast 0
-=1-8c04ba9a6792-6734af39-173-437c
-Z3 !s124 OEM10U2 
-Z4 o-quiet -auto_acc_if_foreign -work work +acc
-Z5 tCvgOpt 0
+!s110 1731865055
+V2doMTE?g>b3g1OBzKd3S?2
+04 18 4 work interleaver_top_tb fast 0
+=1-8c04ba9a6792-673a29de-335-808
+!s124 OEM10U7 
+Z2 o-quiet -auto_acc_if_foreign -work work -L altera_mf +acc
+Z3 tCvgOpt 0
 n@_opt
-Z6 OL;O;2021.2;73
-R1
+Z4 OL;O;2021.2;73
 T_opt1
-!s110 1731770198
-VR3Gk:M3KNmcflX7LciHJn1
+!s110 1731863092
+VScP;RQlG_YAO:dzAj;0hD1
 04 11 4 work PPBuffer_tb fast 0
-=1-7cb27df2f6ca-6738b756-af-4a98
+=1-8c04ba9a6792-673a2234-b2-4f20
 !s124 OEM10U5 
-o-quiet -auto_acc_if_foreign -work work -L altera_mf +acc
-R5
+R2
+R3
 n@_opt1
-R6
+R4
 R1
 T_opt2
-Z7 !s110 1731774445
-Vk^KWBKH9X<3alm>7GAhek1
+!s110 1731844814
+VH:ND[[e9i?5FeFR<7DLXP1
 04 14 4 work interleaver_tb fast 0
-=1-7cb27df2f6ca-6738c7ed-172-adc
+=1-8c04ba9a6792-6739dacd-3b6-3940
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work +acc
 R3
-R4
-R5
 n@_opt2
-R6
+R4
+R1
 vinterleaver
-Z8 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R7
+Z5 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z6 !s110 1731865054
 !i10b 1
-!s100 k8hXAcaCB1KJkL[iecVWb2
-Ike;V9:_@oJ>MH[[Eaio3e1
+!s100 jkfMIfTze`XLZ4[T^33DU2
+IJ;6I=fVeg>AE2eX<ahi0n2
 S1
 R1
-w1731772640
+w1731851358
 8../rtl/interleaver.sv
 F../rtl/interleaver.sv
-!i122 545
-L0 1 57
-Z9 VDg1SIo80bB@j0V0VzS_@n1
-Z10 OL;L;2021.2;73
+!i122 724
+Z7 L0 1 58
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2021.2;73
 r1
 !s85 0
 31
-Z11 !s108 1731774444.000000
-Z12 !s107 ../rtl/out_interlace.sv|../rtl/interleaver.sv|../rtl/SPI_FSM.sv|../rtl/PPBufferControl.sv|../rtl/PPBuffer.sv|
-Z13 !s90 -reportprogress|300|-sv|../rtl/PPBuffer.sv|../rtl/PPBufferControl.sv|../rtl/SPI_FSM.sv|../rtl/interleaver.sv|../rtl/out_interlace.sv|
+Z10 !s108 1731865054.000000
+Z11 !s107 ../rtl/interleaver_top.sv|../rtl/interleaver.sv|../rtl/PPBufferControl.sv|../rtl/PPBuffer.sv|
+Z12 !s90 -reportprogress|300|-sv|../rtl/PPBuffer.sv|../rtl/PPBufferControl.sv|../rtl/interleaver.sv|../rtl/interleaver_top.sv|
 !i113 0
-Z14 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R5
+Z13 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
 vinterleaver_tb
-R8
-R7
+R5
+!s110 1731863062
 !i10b 1
-!s100 Nl4c_:mB=Wlm^KBci@g9C1
-I65RJ1E6VM9I5Cj<X6of>R3
+!s100 no6VQigo9lKD81]2fc2LU2
+IdiK5e6@SC:M4ElI=6[4DI1
 S1
 R1
-w1731774440
+w1731774595
 8interleaver_tb.sv
 Finterleaver_tb.sv
-!i122 546
+!i122 696
 L0 3 102
+R8
 R9
-R10
 r1
 !s85 0
 31
-!s108 1731774445.000000
+!s108 1731863062.000000
 !s107 interleaver_tb.sv|
 !s90 -reportprogress|300|-sv|interleaver_tb.sv|
 !i113 0
-R14
+R13
+R3
+vinterleaver_top
 R5
-vout_interlace
+R6
+!i10b 1
+!s100 2j5`X:Y1J@C0_H3=@NRz;1
+I4?h?mb[U3Y?V1JBoFhPY]0
+S1
+R1
+w1731778130
+8../rtl/interleaver_top.sv
+F../rtl/interleaver_top.sv
+!i122 724
+L0 1 56
 R8
-R7
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R3
+vinterleaver_top_tb
+R5
+R6
+!i10b 1
+!s100 Jz<DiiDjm53[dNUAhIjXI3
+IG[gJ_nTlJR3>fo72=`0ZK3
+S1
+R1
+w1731865048
+8interleaver_top_tb.sv
+Finterleaver_top_tb.sv
+!i122 726
+L0 1 112
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 interleaver_top_tb.sv|
+!s90 -reportprogress|300|-sv|interleaver_top_tb.sv|
+!i113 0
+R13
+R3
+vout_interlace
+R5
+Z14 !s110 1731774445
 !i10b 1
 !s100 E:k7;VC=;=d^_VJD;bc<D1
 IMh3l@WV;3DL65e@82Q_6A3
@@ -271,20 +371,20 @@ w1731504580
 F../rtl/out_interlace.sv
 !i122 545
 L0 1 10
+R8
 R9
-R10
 r1
 !s85 0
 31
-R11
-R12
-R13
+Z15 !s108 1731774444.000000
+Z16 !s107 ../rtl/out_interlace.sv|../rtl/interleaver.sv|../rtl/SPI_FSM.sv|../rtl/PPBufferControl.sv|../rtl/PPBuffer.sv|
+Z17 !s90 -reportprogress|300|-sv|../rtl/PPBuffer.sv|../rtl/PPBufferControl.sv|../rtl/SPI_FSM.sv|../rtl/interleaver.sv|../rtl/out_interlace.sv|
 !i113 0
-R14
-R5
+R13
+R3
 vout_interlace_tb
-R8
-R2
+R5
+!s110 1731505977
 !i10b 1
 !s100 ]6H>KB[4C_T?ZRj_mP4@M1
 I3ac<GPzfjloVRLAJo=E5C1
@@ -295,8 +395,8 @@ w1731505972
 Fout_interlace_tb.sv
 !i122 114
 L0 1 50
+R8
 R9
-R10
 r1
 !s85 0
 31
@@ -304,36 +404,36 @@ r1
 !s107 out_interlace_tb.sv|
 !s90 -reportprogress|300|-sv|out_interlace_tb.sv|
 !i113 0
-R14
-R5
+R13
+R3
 vPPBuffer
-R8
-!s110 1731774444
+R5
+R6
 !i10b 1
 !s100 YOZI`?47l]LHSf8HkZfC21
 I?h]eOUZ^9J6>O:Ph2GkSg0
 S1
 R1
-w1731766947
+w1731777667
 8../rtl/PPBuffer.sv
 F../rtl/PPBuffer.sv
-!i122 545
-L0 1 58
+!i122 724
+R7
+R8
 R9
-R10
 r1
 !s85 0
 31
+R10
 R11
 R12
-R13
 !i113 0
-R14
-R5
+R13
+R3
 n@p@p@buffer
 vPPBuffer_tb
-R8
-Z15 !s110 1731770197
+R5
+!s110 1731863091
 !i10b 1
 !s100 7`;dMNPc27o[a]FXR20>U3
 IRmk<m8@S]`LEc?<^UOb0Y1
@@ -342,47 +442,47 @@ R1
 w1731767012
 8PPBuffer_tb.sv
 FPPBuffer_tb.sv
-!i122 515
+!i122 699
 L0 1 135
+R8
 R9
-R10
 r1
 !s85 0
 31
-Z16 !s108 1731770197.000000
+!s108 1731863091.000000
 !s107 PPBuffer_tb.sv|
 !s90 -reportprogress|300|-sv|PPBuffer_tb.sv|
 !i113 0
-R14
-R5
+R13
+R3
 n@p@p@buffer_tb
 vPPBufferControl
-R8
-R7
+R5
+R6
 !i10b 1
-!s100 b_PPEZ]K4lohVgf?RaK1<1
-I7J4b7CLiK75UMBIN?zeHO1
+!s100 TA[a`C01O>M[Rl>7ALS5l3
+I0Xoe?W]S[]FL6[AR@mR?B1
 S1
 R1
-w1731770224
+w1731863023
 8../rtl/PPBufferControl.sv
 F../rtl/PPBufferControl.sv
-!i122 545
-L0 1 177
+!i122 724
+L0 1 180
+R8
 R9
-R10
 r1
 !s85 0
 31
+R10
 R11
 R12
-R13
 !i113 0
-R14
-R5
+R13
+R3
 n@p@p@buffer@control
 vprbs
-R8
+R5
 !s110 1731260862
 !i10b 1
 !s100 DaT5THR<:Rz?XgHnh`7YO2
@@ -394,8 +494,8 @@ w1731260000
 F../rtl/prbs.sv
 !i122 42
 L0 1 52
+R8
 R9
-R10
 r1
 !s85 0
 31
@@ -403,10 +503,10 @@ r1
 !s107 ../rtl/prbs.sv|
 !s90 -reportprogress|300|-sv|../rtl/prbs.sv|
 !i113 0
-R14
-R5
+R13
+R3
 vprbs_tb
-R8
+R5
 !s110 1731260863
 !i10b 1
 !s100 H0L946zXJf50XETMOiO9M1
@@ -414,23 +514,23 @@ IdK<3H1`iImYMnmdXhDJ4S0
 S1
 R1
 w1731260854
-Z17 8prbs_tb.sv
-Z18 Fprbs_tb.sv
+Z18 8prbs_tb.sv
+Z19 Fprbs_tb.sv
 !i122 43
 L0 1 79
+R8
 R9
-R10
 r1
 !s85 0
 31
 !s108 1731260863.000000
-Z19 !s107 prbs_tb.sv|
-Z20 !s90 -reportprogress|300|-sv|prbs_tb.sv|
+Z20 !s107 prbs_tb.sv|
+Z21 !s90 -reportprogress|300|-sv|prbs_tb.sv|
 !i113 0
-R14
-R5
+R13
+R3
 vprbs_verify_tb
-R8
+R5
 !s110 1731258599
 !i10b 1
 !s100 J53I[;fkm`^gWG7@F;[3D0
@@ -438,24 +538,24 @@ IDT8dNoa[984C@<fhUJlV@3
 S1
 R1
 w1731258548
-R17
 R18
+R19
 !i122 1
 L0 3 104
+R8
 R9
-R10
 r1
 !s85 0
 31
 !s108 1731258599.000000
-R19
 R20
+R21
 !i113 0
-R14
-R5
+R13
+R3
 vSDPR
-R8
-R15
+R5
+R6
 !i10b 1
 !s100 EI56BNmOGPG_Y1M>[fh`I1
 IdUFzzLB2^n4AUhgIXJ16H2
@@ -464,23 +564,23 @@ R1
 w1731709047
 8../ip/SDPR.v
 F../ip/SDPR.v
-!i122 514
+!i122 725
 L0 40 78
+R8
 R9
-R10
 r1
 !s85 0
 31
-R16
+R10
 !s107 ../ip/SDPR.v|
 !s90 -reportprogress|300|-sv|../ip/SDPR.v|
 !i113 0
-R14
-R5
+R13
+R3
 n@s@d@p@r
 vSPI_FSM
-R8
-R7
+R5
+R14
 !i10b 1
 !s100 nPGmLKT>B5N]HJP=c>kOM2
 Iz419<2BLLMOgNNc@TY<a=3
@@ -491,20 +591,20 @@ w1731412862
 F../rtl/SPI_FSM.sv
 !i122 545
 L0 1 93
+R8
 R9
-R10
 r1
 !s85 0
 31
-R11
-R12
-R13
+R15
+R16
+R17
 !i113 0
-R14
-R5
+R13
+R3
 n@s@p@i_@f@s@m
 vSPI_FSM_tb
-R8
+R5
 !s110 1731412836
 !i10b 1
 !s100 >OeJW1f6h9J:nA@XVRk5W1
@@ -516,8 +616,8 @@ w1731277925
 FSPI_FSM_tb.sv
 !i122 80
 L0 1 90
+R8
 R9
-R10
 r1
 !s85 0
 31
@@ -525,6 +625,6 @@ r1
 !s107 SPI_FSM_tb.sv|
 !s90 -reportprogress|300|-sv|SPI_FSM_tb.sv|
 !i113 0
-R14
-R5
+R13
+R3
 n@s@p@i_@f@s@m_tb
