@@ -4,7 +4,7 @@ add wave -noupdate /interleaver_top_tb/clk
 add wave -noupdate /interleaver_top_tb/resetN
 add wave -noupdate /interleaver_top_tb/ready_mod
 add wave -noupdate /interleaver_top_tb/valid_fec
-add wave -noupdate /interleaver_top_tb/data_in
+add wave -noupdate -color Cyan /interleaver_top_tb/data_in
 add wave -noupdate /interleaver_top_tb/data_out
 add wave -noupdate /interleaver_top_tb/ready_interleaver
 add wave -noupdate /interleaver_top_tb/valid_interleaver
@@ -13,8 +13,11 @@ add wave -noupdate /interleaver_top_tb/data_in_sequence
 add wave -noupdate /interleaver_top_tb/dut/data_out_index
 add wave -noupdate /interleaver_top_tb/dut/rdaddress
 add wave -noupdate /interleaver_top_tb/dut/PingPongBuffer_inst/BufferControl/state
+add wave -noupdate /interleaver_top_tb/dut/valid_out
+add wave -noupdate /interleaver_top_tb/dut/Interleaver_inst/data_out_index
+add wave -noupdate /interleaver_top_tb/dut/Interleaver_inst/data_out
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {6197752 ps} 0}
+WaveRestoreCursors {{Cursor 1} {2948022731 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -30,4 +33,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {6197328 ps} {6198328 ps}
+WaveRestoreZoom {2947993600 ps} {2948505600 ps}

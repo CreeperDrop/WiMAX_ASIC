@@ -12,7 +12,7 @@ module interleaver #(
     input  logic                     data_in,              // Data from FEC
 
     output logic                     data_out,
-    output logic [8:0] data_out_index,
+    output logic [$clog2(Ncbps)-1:0] data_out_index,
     output logic                     ready_interleaver,   // Ready out from interleaver
     output logic                     valid_interleaver    // Valid out from interleaver
 );

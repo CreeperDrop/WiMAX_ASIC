@@ -47,7 +47,7 @@ PPBuffer PingPongBuffer_inst (
 always_ff @(posedge clk or negedge resetN) begin
     if(resetN == 1'b0) begin
         rdaddress <= '0;
-    end else if(valid_out == 1'b1) begin
+    end else if((valid_out == 1'b1) && (ready_out == 1'b1)) begin
         if(rdaddress == 191) rdaddress <= '0;
         else                 rdaddress <= rdaddress + 1;
     end

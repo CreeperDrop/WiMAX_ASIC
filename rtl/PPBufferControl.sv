@@ -95,7 +95,7 @@ always_comb begin
             count_en           = 1'b0;
             clear_count_en     = 1'b0;
             clear_counter_resetN = 1'b0;
-            valid_out          = 1'b0;
+            // valid_out          = 1'b0;
             ready_out          = 1'b0;
         end
         CLEAR: begin
@@ -110,7 +110,7 @@ always_comb begin
             clear_count_en     = 1'b1;
             clear_counter_resetN = 1'b1;
 
-            valid_out          = 1'b0;
+            // valid_out          = 1'b0;
             ready_out          = (clear_counter == 1'b1) ? 1'b1 : 1'b0;
         end
         WRITE_A: begin
@@ -125,7 +125,7 @@ always_comb begin
             clear_count_en     = 1'b0;
             clear_counter_resetN = 1'b0;
 
-            valid_out          = 1'b1;
+            // valid_out          = 1'b1;
             ready_out          = 1'b1;
             
         end
@@ -141,7 +141,7 @@ always_comb begin
             clear_count_en     = 1'b0;
             clear_counter_resetN = 1'b0;
 
-            valid_out          = 1'b1;
+            // valid_out          = 1'b1;
             ready_out          = 1'b1;
         end
     endcase
@@ -156,11 +156,11 @@ end
 always_ff @(posedge clk or negedge bit_counter_resetN) begin
     if(bit_counter_resetN == 1'b0) begin
         bit_counter <= '0;
-        // valid_out <= 1'b0;
+        valid_out <= 1'b0;
     end else if(count_en == 1'b1) begin
         if(bit_counter == 191) begin 
             bit_counter <= '0;
-            // valid_out <= 1'b1;
+            valid_out <= 1'b1;
         end else begin
             bit_counter <= bit_counter + 1;
         end
