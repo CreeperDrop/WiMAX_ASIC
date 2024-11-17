@@ -65,12 +65,12 @@ initial begin
         while(i < 192) begin
             data_in = data_in_sequence[i];
             #5;
-            $display("data_out[%0d] = %h, predicted_out[%0d] = %h", data_out_index, data_out, data_out_index, predicted_out[data_out_index]);
-            // display_cell();
             if(data_out != predicted_out[data_out_index]) begin
-                $display("Error: data_out[%0d] = %h, predicted_out[%0d] = %h", i, data_out, i, predicted_out[data_out_index]);
-                // $display("Test failed.");
-                // $stop;
+                $fatal("data_in[%3d] = %0b | data_out[%3d] = %0b | predicted_out[%3d] = %0b | TEST FAILED", i, data_in, data_out_index, data_out, data_out_index, predicted_out[data_out_index]);
+                $display("Test failed.");
+                $stop;
+            end else begin
+                $display("data_in[%3d] = %0b | data_out[%3d] = %0b | predicted_out[%3d] = %0b | TEST PASSED", i, data_in, data_out_index, data_out, data_out_index, predicted_out[data_out_index]);
             end
             i++;
             #5;
@@ -78,7 +78,7 @@ initial begin
         end
         display_footer();
     end
-    $display("Test completed.");
+    $display("Streaming Successful.");
 
     $stop;
 end
@@ -98,7 +98,4 @@ task display_footer();
     $display("===================================================");
 endtask
 
-task display_cell();
-    $display("%b       %3d   %b   %3d   %b   %3d", data_in, data_out_index, data_out, data_out_index, predicted_out[data_out_index], data_out_index);
-endtask
 endmodule

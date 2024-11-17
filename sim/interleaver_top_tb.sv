@@ -90,9 +90,10 @@ initial begin
         for(i = 0; i < 192; i = i + 1) begin
                 data_in = data_in_sequence[i];
                 // $display("Data in: %h", data_in);
-                #10;
+                #20;
                 data_out_sequence[dut.data_out_index] = data_out;
-                #10;
+                
+                // #10;
             
         end
         $display("Data out: %h", data_out_sequence);
