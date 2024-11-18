@@ -11,7 +11,7 @@ parameter d     = 16;
 // Testbench Signals
 logic                     clk;
 logic                     resetN;
-logic                     ready_mod;
+logic                     ready_buffer;
 logic                     valid_fec;
 logic                     data_in;
 
@@ -33,7 +33,7 @@ interleaver #(
 ) dut (
     .clk(clk),
     .resetN(resetN),
-    .ready_mod(ready_mod),
+    .ready_buffer(ready_buffer),
     .valid_fec(valid_fec),
     .data_in(data_in),
     .data_out(data_out),
@@ -52,7 +52,7 @@ initial begin
     // Initialize signals
     clk = 0;
     resetN = 0;
-    ready_mod = 1;
+    ready_buffer = 1;
     valid_fec = 0;
     data_in = 0;
     
@@ -62,7 +62,7 @@ initial begin
     // Test sequence
     // @(posedge clk);
     valid_fec = 1;
-    repeat(2) begin
+    repeat(10) begin
         $display("Starting test...");
         i = 0;
         while(i < 192) begin
@@ -82,12 +82,12 @@ initial begin
         end
         $display("Data_out_sequence: %h", data_out_sequence);
         if(data_out_sequence === predicted_out) begin
-            $error("Test passed.");
+            $display("Test passed.");
         end else begin
-            $fatal("Test failed.");
+            $error("Test failed.");
             $stop;
         end
-        data_out_sequence = 192'h0;
+        data_out_sequence = 192'hx;
         display_footer();
     end
     $display("Streaming Successful.");

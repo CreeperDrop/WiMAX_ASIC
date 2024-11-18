@@ -111,7 +111,7 @@ always_comb begin
             clear_counter_resetN = 1'b1;
 
             // valid_out          = 1'b0;
-            ready_out          = (clear_counter == 1'b1) ? 1'b1 : 1'b0;
+            ready_out          = (clear_counter == 1'b1);
         end
         WRITE_A: begin
             rden_A             = 1'b0;

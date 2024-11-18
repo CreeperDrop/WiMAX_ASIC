@@ -2,10 +2,10 @@ onerror {resume}
 quietly WaveActivateNextPane {} 0
 add wave -noupdate /interleaver_top_tb/clk
 add wave -noupdate /interleaver_top_tb/resetN
-add wave -noupdate /interleaver_top_tb/ready_mod
 add wave -noupdate /interleaver_top_tb/valid_fec
 add wave -noupdate -color Cyan /interleaver_top_tb/data_in
 add wave -noupdate /interleaver_top_tb/data_out
+add wave -noupdate /interleaver_top_tb/ready_in
 add wave -noupdate /interleaver_top_tb/ready_interleaver
 add wave -noupdate /interleaver_top_tb/valid_interleaver
 add wave -noupdate /interleaver_top_tb/predicted_out
@@ -33,4 +33,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {2947993600 ps} {2948505600 ps}
+WaveRestoreZoom {3383600 ps} {3895600 ps}
