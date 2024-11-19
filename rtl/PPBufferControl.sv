@@ -99,10 +99,10 @@ always_comb begin
             ready_out          = 1'b0;
         end
         CLEAR: begin
-            rden_A             = 1'b1;
+            rden_A             = 1'b0;
             rden_B             = 1'b1;
             wren_A             = 1'b1;
-            wren_B             = 1'b1;
+            wren_B             = 1'b0;
             q_sel              = 1'b0;
 
             bit_counter_resetN = 1'b0;

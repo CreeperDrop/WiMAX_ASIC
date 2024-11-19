@@ -70,14 +70,14 @@ module interleaver_top_tb();
                 // Feed data bit by bit
                 data_in = data_in_sequence[i];
                 #(CLK_PERIOD / 2);
-
+                
                 // Display data
                 $display("Data in: %b | @Index: %d | Data out: %b | @Index: %d | rdaddress: %0d", 
                           data_in, i, data_out, dut.data_out_index, dut.rdaddress);
                 #(CLK_PERIOD / 2);
                 // Capture output data into the sequence buffer
                 if (valid_interleaver && ready_in) begin
-                    data_out_sequence[dut.data_out_index] = data_out;
+                    data_out_sequence[i] = data_out;
                 end
             end
             $display("Data out sequence %d: %h", pass, data_out_sequence);

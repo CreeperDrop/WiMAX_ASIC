@@ -16,8 +16,12 @@ add wave -noupdate /interleaver_top_tb/dut/PingPongBuffer_inst/BufferControl/sta
 add wave -noupdate /interleaver_top_tb/dut/valid_out
 add wave -noupdate /interleaver_top_tb/dut/Interleaver_inst/data_out_index
 add wave -noupdate /interleaver_top_tb/dut/Interleaver_inst/data_out
+add wave -noupdate /interleaver_top_tb/dut/PingPongBuffer_inst/rden_A
+add wave -noupdate /interleaver_top_tb/dut/PingPongBuffer_inst/rden_B
+add wave -noupdate /interleaver_top_tb/dut/PingPongBuffer_inst/wren_A
+add wave -noupdate /interleaver_top_tb/dut/PingPongBuffer_inst/wren_B
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {2948022731 ps} 0}
+WaveRestoreCursors {{Cursor 1} {30000 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 150
 configure wave -valuecolwidth 100
@@ -33,4 +37,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {3383600 ps} {3895600 ps}
+WaveRestoreZoom {0 ps} {512 ns}
