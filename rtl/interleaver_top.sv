@@ -44,21 +44,21 @@ PPBuffer PingPongBuffer_inst (
     .ready_out(ready_out)
 );
 
-// ReadControl ReadControl_inst (
-//     .clk(clk),
-//     .resetN(resetN),
-//     .valid_out(valid_out),
-//     .ready_out(ready_out),
-//     .rdaddress(rdaddress)
-// );
+ReadControl ReadControl_inst (
+    .clk(clk),
+    .resetN(resetN),
+    .valid_out(valid_out),
+    .ready_out(ready_out),
+    .rdaddress(rdaddress)
+);
 
-always_ff @(posedge clk or negedge resetN) begin
-    if(resetN == 1'b0) begin
-        rdaddress <= '0;
-    end else if(ready_out == 1'b1) begin
-        if(rdaddress == 191) rdaddress <= '0;
-        else                 rdaddress <= rdaddress + 1;
-    end
-end
+// always_ff @(posedge clk or negedge resetN) begin
+//     if(resetN == 1'b0) begin
+//         rdaddress <= '0;
+//     end else if(ready_out == 1'b1) begin
+//         if(rdaddress == 191) rdaddress <= '0;
+//         else                 rdaddress <= rdaddress + 1;
+//     end
+// end
 
 endmodule

@@ -99,10 +99,10 @@ always_comb begin
             ready_out          = 1'b0;
         end
         CLEAR: begin
-            rden_A             = 1'b0;
+            rden_A             = 1'b1;
             rden_B             = 1'b1;
             wren_A             = 1'b1;
-            wren_B             = 1'b0;
+            wren_B             = 1'b1;
             q_sel              = 1'b0;
 
             bit_counter_resetN = 1'b0;
@@ -160,7 +160,6 @@ always_ff @(posedge clk or negedge bit_counter_resetN) begin
     end else if(count_en == 1'b1) begin
         if(bit_counter == 191) begin 
             bit_counter <= '0;
-            valid_out <= 1'b1;
         end else begin
             bit_counter <= bit_counter + 1;
         end
@@ -176,5 +175,17 @@ always_ff @(posedge clk or negedge clear_counter_resetN) begin
         else                   clear_counter <= clear_counter + 1;
     end
 end
+
+// always_ff @(posedge clk or negedge resetN) begin
+//     if(resetN == 1'b0) begin
+//         valid_out <= 1'b0;
+//     end else begin
+//         if(bit_counter == 191) begin
+//             valid_out <= 1'b1;
+//         end else begin
+//             valid_out <= 1'b0;
+//         end
+//     end
+// end
 
 endmodule
