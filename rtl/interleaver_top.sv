@@ -19,8 +19,6 @@ logic [8:0] data_out_index;
 logic       ready_interleaver;
 logic       valid_interleaver;
 logic [8:0] rdaddress;
-logic       read_en;
-logic       buffer_filled;
 
 interleaver Interleaver_inst (
     .clk(clk),
@@ -46,41 +44,21 @@ PPBuffer PingPongBuffer_inst (
     .ready_out(ready_out)
 );
 
-// always_ff @(posedge clk or negedge resetN) begin
-//     if(resetN == 1'b0) begin
-//         rdaddress <= '0;
-//     end else if(read_en) begin
-//         if(rdaddress == 191) rdaddress <= '0;
-//         else                 rdaddress <= rdaddress + 1;
-//     end
-// end
+// ReadControl ReadControl_inst (
+//     .clk(clk),
+//     .resetN(resetN),
+//     .valid_out(valid_out),
+//     .ready_out(ready_out),
+//     .rdaddress(rdaddress)
+// );
 
-// assign read_en = valid_out && ready_out;
-
-// Buffer filled flag logic
 always_ff @(posedge clk or negedge resetN) begin
-    if (resetN == 1'b0) begin
-        buffer_filled <= 1'b0;
-    end else if (valid_interleaver && (data_out_index == (Ncbps - 1))) begin
-        buffer_filled <= 1'b1; // Set flag when buffer is fully written
-    end
-end
-
-// Read address logic
-always_ff @(posedge clk or negedge resetN) begin
-    if (resetN == 1'b0) begin
+    if(resetN == 1'b0) begin
         rdaddress <= '0;
-    end else if (read_en && buffer_filled) begin
-        if (rdaddress == (Ncbps - 1)) begin
-            rdaddress <= '0;
-        end else begin
-            rdaddress <= rdaddress + 1;
-        end
+    end else if(ready_out == 1'b1) begin
+        if(rdaddress == 191) rdaddress <= '0;
+        else                 rdaddress <= rdaddress + 1;
     end
 end
-
-// Read enable signal
-assign read_en = valid_out && ready_out && buffer_filled;
-
 
 endmodule

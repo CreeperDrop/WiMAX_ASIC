@@ -51,7 +51,7 @@ module interleaver_top_tb();
         resetN = 0;
         valid_fec = 0;
         ready_in = 0;
-        data_in = 0;
+        // data_in = 0;
 
         // Apply reset
         #(CLK_PERIOD);
@@ -71,17 +71,16 @@ module interleaver_top_tb();
                 data_in = data_in_sequence[i];
                 #(CLK_PERIOD / 2);
 
+                // Display data
+                $display("Data in: %b | @Index: %d | Data out: %b | @Index: %d | rdaddress: %0d", 
+                          data_in, i, data_out, dut.data_out_index, dut.rdaddress);
+                #(CLK_PERIOD / 2);
                 // Capture output data into the sequence buffer
                 if (valid_interleaver && ready_in) begin
                     data_out_sequence[dut.data_out_index] = data_out;
                 end
-
-                // Display data
-                $display("Data in: %b | @Index: %d | Data out: %b | @Index: %d", 
-                          data_in, i, data_out, dut.data_out_index);
-                #(CLK_PERIOD / 2);
             end
-                            // ready_in = 1;
+            $display("Data out sequence %d: %h", pass, data_out_sequence);
 
             // Check if the output sequence matches the expected output
             if (data_out_sequence === predicted_out) begin
@@ -91,7 +90,7 @@ module interleaver_top_tb();
             end
         end
         
-        $display("Final Data out sequence: %h", data_out_sequence);
+        // $display("Final Data out sequence: %h", data_out_sequence);
         $stop;
     end
 
