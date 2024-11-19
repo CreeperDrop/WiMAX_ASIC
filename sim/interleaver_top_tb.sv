@@ -21,7 +21,7 @@ module interleaver_top_tb();
     logic [0:191] predicted_out    = 192'h4B047DFA42F2A5D5F61C021A5851E9A309A24FD58086BD1E;  // Golden data
     logic [0:191] data_in_sequence = 192'h2833E48D392026D5B6DC5E4AF47ADD29494B6C89151348CA; // Golden data
     logic [0:191] data_out_sequence;
-
+    logic [8:0] data_out_index;
     // Instantiate the interleaver module
     interleaver_top #(
         .Ncbps(Ncbps),
@@ -33,9 +33,10 @@ module interleaver_top_tb();
         .resetN(resetN),
         .data_in(data_in),
         .ready_in(ready_in),
+        .data_out_index(data_out_index),
         .valid_in(valid_fec),
         .data_out(data_out),
-        .valid_out(valid_interleaver),
+        .valid_interleaver(valid_interleaver),
         .ready_out(ready_interleaver)
     );
 
@@ -51,12 +52,14 @@ module interleaver_top_tb();
         resetN = 0;
         valid_fec = 0;
         ready_in = 0;
-        // data_in = 0;
+        data_in = 0;
+        ready_in = 0;
 
         // Apply reset
         #(CLK_PERIOD);
         resetN = 1;
         
+        ready_in = 1;
         // Wait for the interleaver to be ready
         while (!ready_interleaver) begin
             #(CLK_PERIOD);
@@ -64,20 +67,22 @@ module interleaver_top_tb();
         
         // Start sending data
         valid_fec = 1;
-        ready_in = 1;
         for (int pass = 0; pass < 5; pass++) begin
             for (i = 0; i < 192; i++) begin
-                // Feed data bit by bit
+                // Feed data logic by logic
                 data_in = data_in_sequence[i];
                 #(CLK_PERIOD / 2);
-                
+                // if (valid_interleaver && ready_in) begin
+                //     data_out_sequence[data_out_index] = data_out;
+                // end
+
                 // Display data
-                $display("Data in: %b | @Index: %d | Data out: %b | @Index: %d | rdaddress: %0d", 
-                          data_in, i, data_out, dut.data_out_index, dut.rdaddress);
+                // $display("Data in: %b | @Index: %d | Data out: %b | @Index: %d | wraddress: %0d", 
+                //           data_in, i, data_out, data_out_index, dut.wraddress);
                 #(CLK_PERIOD / 2);
                 // Capture output data into the sequence buffer
                 if (valid_interleaver && ready_in) begin
-                    data_out_sequence[i] = data_out;
+                    data_out_sequence[data_out_index] = data_out;
                 end
             end
             $display("Data out sequence %d: %h", pass, data_out_sequence);

@@ -9,24 +9,28 @@ module interleaver_top #(
     input  logic data_in,
     input  logic ready_in,
     input  logic valid_in,
-    
+    output  logic [8:0] data_out_index,
     output logic data_out,
-    output logic valid_out,
+    output logic valid_interleaver,
     output logic ready_out
 );
 
-logic [8:0] data_out_index;
+// logic [8:0] data_out_index;
 logic       ready_interleaver;
-logic       valid_interleaver;
+// logic       valid_interleaver;
+logic [8:0] wraddress;
 logic [8:0] rdaddress;
+logic       buffer_out;
+logic       buffer_valid;
+// logic       ready_out;
 
 interleaver Interleaver_inst (
     .clk(clk),
     .resetN(resetN),
     .ready_buffer(ready_out),
-    .valid_fec(valid_in),
-    .data_in(data_in),
-    .data_out(data_interleaved),
+    .valid_fec(valid_out),
+    .data_in(buffer_out),
+    .data_out(data_out),
     .data_out_index(data_out_index),
     .ready_interleaver(ready_interleaver),
     .valid_interleaver(valid_interleaver)
@@ -35,11 +39,11 @@ interleaver Interleaver_inst (
 PPBuffer PingPongBuffer_inst (
     .clk(clk),
     .resetN(resetN),
-    .wraddress(data_out_index),
-    .wrdata(data_interleaved),
-    .rdaddress(rdaddress),
-    .valid_in(valid_interleaver),
-    .q(data_out),
+    .wraddress(wraddress),
+    .wrdata(data_in),
+    .rdaddress(wraddress),
+    .valid_in(valid_in),
+    .q(buffer_out),
     .valid_out(valid_out),
     .ready_out(ready_out)
 );
@@ -54,11 +58,20 @@ PPBuffer PingPongBuffer_inst (
 
 always_ff @(posedge clk or negedge resetN) begin
     if(resetN == 1'b0) begin
-        rdaddress <= '0;
+        wraddress <= '0;
     end else if(ready_out == 1'b1) begin
-        if(rdaddress == 191) rdaddress <= '0;
-        else                 rdaddress <= rdaddress + 1;
+        if(wraddress == 191) wraddress <= '0;
+        else                 wraddress <= wraddress + 1;
     end
 end
+
+// always_ff @(posedge clk or negedge resetN) begin
+//     if(resetN == 1'b0) begin
+//         rdaddress <= '0;
+//     end else if(valid_out == 1'b1) begin
+//         if(rdaddress == 191) rdaddress <= '0;
+//         else                 rdaddress <= rdaddress + 1;
+//     end
+// end
 
 endmodule
