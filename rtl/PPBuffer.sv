@@ -1,10 +1,10 @@
 module PPBuffer (
     input  logic       clk,
     input  logic       resetN, 
-    input  logic [8:0] wraddress,
+    input  logic [7:0] wraddress,
     input  logic       wrdata,
     // input  logic q_A,
-    input  logic [8:0] rdaddress,
+    input  logic [7:0] rdaddress,
     // input  logic wrdata_B,
     input  logic       valid_in,
 

@@ -9,7 +9,7 @@ module interleaver_top #(
     input  logic data_in,
     input  logic ready_in,
     input  logic valid_in,
-    output  logic [8:0] data_out_index,
+    output logic [7:0] data_out_index,
     output logic data_out,
     output logic valid_interleaver,
     output logic ready_out
@@ -18,8 +18,8 @@ module interleaver_top #(
 // logic [8:0] data_out_index;
 logic       ready_interleaver;
 // logic       valid_interleaver;
-logic [8:0] wraddress;
-logic [8:0] rdaddress;
+logic [7:0] wraddress;
+logic [7:0] rdaddress;
 logic       buffer_out;
 logic       buffer_valid;
 // logic       ready_out;
@@ -60,7 +60,7 @@ always_ff @(posedge clk or negedge resetN) begin
     if(resetN == 1'b0) begin
         wraddress <= '0;
     end else if(ready_out == 1'b1) begin
-        if(wraddress == 191) wraddress <= '0;
+        if(wraddress == 8'd191) wraddress <= '0;
         else                 wraddress <= wraddress + 1;
     end
 end

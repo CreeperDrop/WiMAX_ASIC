@@ -3,7 +3,7 @@ module ReadControl(
     input  logic       resetN,
     input  logic       valid_out,
     input  logic       ready_out,
-    output logic [8:0] rdaddress
+    output logic [7:0] rdaddress
 );
 
 typedef enum logic [1:0] {
@@ -84,7 +84,7 @@ always_ff @(posedge clk or negedge resetN) begin
     if(resetN == 1'b0) begin
         address_counter <= '0;
     end else if(ready_out == 1'b1) begin
-        if(address_counter == 191) begin
+        if(address_counter == 8'd191) begin
             address_counter <= '0;  // Reset to 0 when max value reached
         end else begin
             address_counter <= address_counter + 1;
