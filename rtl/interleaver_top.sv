@@ -15,14 +15,12 @@ module interleaver_top #(
     output logic ready_out
 );
 
-// logic [8:0] data_out_index;
 logic       ready_interleaver;
-// logic       valid_interleaver;
 logic [7:0] wraddress;
 logic [7:0] rdaddress;
 logic       buffer_out;
 logic       buffer_valid;
-// logic       ready_out;
+logic       valid_out;
 
 interleaver Interleaver_inst (
     .clk(clk),
@@ -44,34 +42,20 @@ PPBuffer PingPongBuffer_inst (
     .rdaddress(wraddress),
     .valid_in(valid_in),
     .q(buffer_out),
+    .ready_in(ready_in),
     .valid_out(valid_out),
     .ready_out(ready_out)
 );
 
-// ReadControl ReadControl_inst (
-//     .clk(clk),
-//     .resetN(resetN),
-//     .valid_out(valid_out),
-//     .ready_out(ready_out),
-//     .rdaddress(rdaddress)
-// );
 
 always_ff @(posedge clk or negedge resetN) begin
     if(resetN == 1'b0) begin
         wraddress <= '0;
     end else if(ready_out == 1'b1) begin
         if(wraddress == 8'd191) wraddress <= '0;
-        else                 wraddress <= wraddress + 1;
+        else                    wraddress <= wraddress + 1'b1;
     end
 end
 
-// always_ff @(posedge clk or negedge resetN) begin
-//     if(resetN == 1'b0) begin
-//         rdaddress <= '0;
-//     end else if(valid_out == 1'b1) begin
-//         if(rdaddress == 191) rdaddress <= '0;
-//         else                 rdaddress <= rdaddress + 1;
-//     end
-// end
 
 endmodule

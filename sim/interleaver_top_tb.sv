@@ -21,7 +21,7 @@ module interleaver_top_tb();
     logic [0:191] predicted_out    = 192'h4B047DFA42F2A5D5F61C021A5851E9A309A24FD58086BD1E;  // Golden data
     logic [0:191] data_in_sequence = 192'h2833E48D392026D5B6DC5E4AF47ADD29494B6C89151348CA; // Golden data
     logic [0:191] data_out_sequence;
-    logic [8:0] data_out_index;
+    logic [7:0] data_out_index;
     // Instantiate the interleaver module
     interleaver_top #(
         .Ncbps(Ncbps),
@@ -71,33 +71,30 @@ module interleaver_top_tb();
             for (i = 0; i < 192; i++) begin
                 // Feed data logic by logic
                 data_in = data_in_sequence[i];
-                #(CLK_PERIOD / 2);
-                // if (valid_interleaver && ready_in) begin
-                //     data_out_sequence[data_out_index] = data_out;
-                // end
+                #(CLK_PERIOD);
 
-                // Display data
-                // $display("Data in: %b | @Index: %d | Data out: %b | @Index: %d | wraddress: %0d", 
-                //           data_in, i, data_out, data_out_index, dut.wraddress);
-                #(CLK_PERIOD / 2);
                 // Capture output data into the sequence buffer
                 if (valid_interleaver && ready_in) begin
                     data_out_sequence[data_out_index] = data_out;
                 end
             end
-            $display("Data out sequence %d: %h", pass, data_out_sequence);
 
-            // Check if the output sequence matches the expected output
-            if (data_out_sequence === predicted_out) begin
-                $display("Test passed for pass %0d", pass);
-            end else begin
-                $display("Test failed for pass %0d", pass);
+            if(pass != 0) begin
+                $display("Data out sequence %d: %h", pass, data_out_sequence);
+                checkOutput(pass);
             end
         end
         
-        // $display("Final Data out sequence: %h", data_out_sequence);
         $stop;
     end
+
+    task checkOutput(int pass);
+        if (data_out_sequence === predicted_out) begin
+            $display("Test %0d passed", pass);
+        end else begin
+            $display("Test %0d failed", pass);
+        end
+    endtask
 
     // Timeout to avoid infinite simulation
     initial begin

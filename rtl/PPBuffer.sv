@@ -7,7 +7,7 @@ module PPBuffer (
     input  logic [7:0] rdaddress,
     // input  logic wrdata_B,
     input  logic       valid_in,
-
+    input  logic       ready_in,
     output logic       q,
     output logic       valid_out,
     output logic       ready_out
@@ -30,6 +30,7 @@ PPBufferControl BufferControl (
     .rden_B(rden_B),
     .wren_A(wren_A),
     .wren_B(wren_B),
+    .ready_in(ready_in),
     .ready_out(ready_out),
     .valid_out(valid_out),
     .q(q)

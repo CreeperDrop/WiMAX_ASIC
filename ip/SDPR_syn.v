@@ -34,7 +34,7 @@
 //https://fpgasoftware.intel.com/eula.
 
 
-//altsyncram ADDRESS_ACLR_B="NONE" ADDRESS_REG_B="CLOCK0" CLOCK_ENABLE_INPUT_A="BYPASS" CLOCK_ENABLE_INPUT_B="BYPASS" CLOCK_ENABLE_OUTPUT_B="BYPASS" DEVICE_FAMILY="Cyclone V" NUMWORDS_A=512 NUMWORDS_B=512 OPERATION_MODE="DUAL_PORT" OUTDATA_ACLR_B="NONE" OUTDATA_REG_B="UNREGISTERED" POWER_UP_UNINITIALIZED="TRUE" RAM_BLOCK_TYPE="M10K" RDCONTROL_REG_B="CLOCK0" READ_DURING_WRITE_MODE_MIXED_PORTS="DONT_CARE" WIDTH_A=1 WIDTH_B=1 WIDTH_BYTEENA_A=1 WIDTHAD_A=9 WIDTHAD_B=9 address_a address_b clock0 data_a q_b rden_b wren_a
+//altsyncram ADDRESS_ACLR_B="NONE" ADDRESS_REG_B="CLOCK0" CLOCK_ENABLE_INPUT_A="BYPASS" CLOCK_ENABLE_INPUT_B="BYPASS" CLOCK_ENABLE_OUTPUT_B="BYPASS" DEVICE_FAMILY="Cyclone V" NUMWORDS_A=256 NUMWORDS_B=256 OPERATION_MODE="DUAL_PORT" OUTDATA_ACLR_B="NONE" OUTDATA_REG_B="UNREGISTERED" POWER_UP_UNINITIALIZED="TRUE" RAM_BLOCK_TYPE="M10K" RDCONTROL_REG_B="CLOCK0" READ_DURING_WRITE_MODE_MIXED_PORTS="DONT_CARE" WIDTH_A=1 WIDTH_B=1 WIDTH_BYTEENA_A=1 WIDTHAD_A=8 WIDTHAD_B=8 address_a address_b clock0 data_a q_b rden_b wren_a
 //VERSION_BEGIN 22.1 cbx_altera_syncram_nd_impl 2023:07:21:07:12:20:SC cbx_altsyncram 2023:07:21:07:12:21:SC cbx_cycloneii 2023:07:21:07:12:21:SC cbx_lpm_add_sub 2023:07:21:07:12:21:SC cbx_lpm_compare 2023:07:21:07:12:21:SC cbx_lpm_decode 2023:07:21:07:12:20:SC cbx_lpm_mux 2023:07:21:07:12:21:SC cbx_mgl 2023:07:21:07:12:36:SC cbx_nadder 2023:07:21:07:12:21:SC cbx_stratix 2023:07:21:07:12:21:SC cbx_stratixii 2023:07:21:07:12:21:SC cbx_stratixiii 2023:07:21:07:12:21:SC cbx_stratixv 2023:07:21:07:12:21:SC cbx_util_mgl 2023:07:21:07:12:21:SC  VERSION_END
 // synthesis VERILOG_INPUT_VERSION VERILOG_2001
 // altera message_off 10463
@@ -54,8 +54,8 @@ module  SDPR_altsyncram
 	q_b,
 	rden_b,
 	wren_a) /* synthesis synthesis_clearbox=1 */;
-	input   [8:0]  address_a;
-	input   [8:0]  address_b;
+	input   [7:0]  address_a;
+	input   [7:0]  address_b;
 	input   clock0;
 	input   [0:0]  data_a;
 	output   [0:0]  q_b;
@@ -64,7 +64,7 @@ module  SDPR_altsyncram
 `ifndef ALTERA_RESERVED_QIS
 // synopsys translate_off
 `endif
-	tri1   [8:0]  address_b;
+	tri1   [7:0]  address_b;
 	tri1   clock0;
 	tri1   [0:0]  data_a;
 	tri1   rden_b;
@@ -74,8 +74,8 @@ module  SDPR_altsyncram
 `endif
 
 	wire  [0:0]   wire_ram_block1a_0portbdataout;
-	wire  [8:0]  address_a_wire;
-	wire  [8:0]  address_b_wire;
+	wire  [7:0]  address_a_wire;
+	wire  [7:0]  address_b_wire;
 
 	cyclonev_ram_block   ram_block1a_0
 	( 
@@ -85,11 +85,11 @@ module  SDPR_altsyncram
 	.eccstatus(),
 	.ena0(wren_a),
 	.ena1(rden_b),
-	.portaaddr({address_a_wire[8:0]}),
+	.portaaddr({address_a_wire[7:0]}),
 	.portadatain({data_a[0]}),
 	.portadataout(),
 	.portawe(wren_a),
-	.portbaddr({address_b_wire[8:0]}),
+	.portbaddr({address_b_wire[7:0]}),
 	.portbdataout(wire_ram_block1a_0portbdataout[0:0]),
 	.portbre(1'b1)
 	`ifndef FORMAL_VERIFICATION
@@ -126,22 +126,22 @@ module  SDPR_altsyncram
 		ram_block1a_0.logical_ram_name = "ALTSYNCRAM",
 		ram_block1a_0.mixed_port_feed_through_mode = "dont_care",
 		ram_block1a_0.operation_mode = "dual_port",
-		ram_block1a_0.port_a_address_width = 9,
+		ram_block1a_0.port_a_address_width = 8,
 		ram_block1a_0.port_a_data_width = 1,
 		ram_block1a_0.port_a_first_address = 0,
 		ram_block1a_0.port_a_first_bit_number = 0,
-		ram_block1a_0.port_a_last_address = 511,
-		ram_block1a_0.port_a_logical_ram_depth = 512,
+		ram_block1a_0.port_a_last_address = 255,
+		ram_block1a_0.port_a_logical_ram_depth = 256,
 		ram_block1a_0.port_a_logical_ram_width = 1,
 		ram_block1a_0.port_b_address_clear = "none",
 		ram_block1a_0.port_b_address_clock = "clock1",
-		ram_block1a_0.port_b_address_width = 9,
+		ram_block1a_0.port_b_address_width = 8,
 		ram_block1a_0.port_b_data_out_clear = "none",
 		ram_block1a_0.port_b_data_width = 1,
 		ram_block1a_0.port_b_first_address = 0,
 		ram_block1a_0.port_b_first_bit_number = 0,
-		ram_block1a_0.port_b_last_address = 511,
-		ram_block1a_0.port_b_logical_ram_depth = 512,
+		ram_block1a_0.port_b_last_address = 255,
+		ram_block1a_0.port_b_logical_ram_depth = 256,
 		ram_block1a_0.port_b_logical_ram_width = 1,
 		ram_block1a_0.port_b_read_enable_clock = "clock1",
 		ram_block1a_0.power_up_uninitialized = "true",
@@ -169,9 +169,9 @@ module SDPR (
 
 	input	  clock;
 	input	[0:0]  data;
-	input	[8:0]  rdaddress;
+	input	[7:0]  rdaddress;
 	input	  rden;
-	input	[8:0]  wraddress;
+	input	[7:0]  wraddress;
 	input	  wren;
 	output	[0:0]  q;
 `ifndef ALTERA_RESERVED_QIS
@@ -231,7 +231,7 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 // Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
-// Retrieval info: PRIVATE: MEMSIZE NUMERIC "512"
+// Retrieval info: PRIVATE: MEMSIZE NUMERIC "256"
 // Retrieval info: PRIVATE: MEM_IN_BITS NUMERIC "0"
 // Retrieval info: PRIVATE: MIFfilename STRING ""
 // Retrieval info: PRIVATE: OPERATION_MODE NUMERIC "2"
@@ -268,8 +268,8 @@ endmodule
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_B STRING "BYPASS"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
-// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "512"
-// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "512"
+// Retrieval info: CONSTANT: NUMWORDS_A NUMERIC "256"
+// Retrieval info: CONSTANT: NUMWORDS_B NUMERIC "256"
 // Retrieval info: CONSTANT: OPERATION_MODE STRING "DUAL_PORT"
 // Retrieval info: CONSTANT: OUTDATA_ACLR_B STRING "NONE"
 // Retrieval info: CONSTANT: OUTDATA_REG_B STRING "UNREGISTERED"
@@ -277,20 +277,20 @@ endmodule
 // Retrieval info: CONSTANT: RAM_BLOCK_TYPE STRING "M10K"
 // Retrieval info: CONSTANT: RDCONTROL_REG_B STRING "CLOCK0"
 // Retrieval info: CONSTANT: READ_DURING_WRITE_MODE_MIXED_PORTS STRING "DONT_CARE"
-// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "9"
-// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "9"
+// Retrieval info: CONSTANT: WIDTHAD_A NUMERIC "8"
+// Retrieval info: CONSTANT: WIDTHAD_B NUMERIC "8"
 // Retrieval info: CONSTANT: WIDTH_A NUMERIC "1"
 // Retrieval info: CONSTANT: WIDTH_B NUMERIC "1"
 // Retrieval info: CONSTANT: WIDTH_BYTEENA_A NUMERIC "1"
 // Retrieval info: USED_PORT: clock 0 0 0 0 INPUT VCC "clock"
 // Retrieval info: USED_PORT: data 0 0 1 0 INPUT NODEFVAL "data[0..0]"
 // Retrieval info: USED_PORT: q 0 0 1 0 OUTPUT NODEFVAL "q[0..0]"
-// Retrieval info: USED_PORT: rdaddress 0 0 9 0 INPUT NODEFVAL "rdaddress[8..0]"
+// Retrieval info: USED_PORT: rdaddress 0 0 8 0 INPUT NODEFVAL "rdaddress[7..0]"
 // Retrieval info: USED_PORT: rden 0 0 0 0 INPUT VCC "rden"
-// Retrieval info: USED_PORT: wraddress 0 0 9 0 INPUT NODEFVAL "wraddress[8..0]"
+// Retrieval info: USED_PORT: wraddress 0 0 8 0 INPUT NODEFVAL "wraddress[7..0]"
 // Retrieval info: USED_PORT: wren 0 0 0 0 INPUT GND "wren"
-// Retrieval info: CONNECT: @address_a 0 0 9 0 wraddress 0 0 9 0
-// Retrieval info: CONNECT: @address_b 0 0 9 0 rdaddress 0 0 9 0
+// Retrieval info: CONNECT: @address_a 0 0 8 0 wraddress 0 0 8 0
+// Retrieval info: CONNECT: @address_b 0 0 8 0 rdaddress 0 0 8 0
 // Retrieval info: CONNECT: @clock0 0 0 0 0 clock 0 0 0 0
 // Retrieval info: CONNECT: @data_a 0 0 1 0 data 0 0 1 0
 // Retrieval info: CONNECT: @rden_b 0 0 0 0 rden 0 0 0 0

@@ -30,7 +30,7 @@ always_ff @(posedge clk or negedge resetN) begin
     end else if(interleave_en == 1'b1) begin
 
         if(k == 8'd191) k <= '0;
-        else            k <= k + 1;
+        else            k <= k + 1'b1;
 
     end
 end

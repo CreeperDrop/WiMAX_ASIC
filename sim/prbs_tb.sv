@@ -1,84 +1,78 @@
 module prbs_tb();
-
-    timeunit 1ns;
-    timeprecision 1ps;
     
-    logic        data_in;
-    logic        clk;
-    logic        reset;
-    logic        load;
-    logic        en;
-    logic [1:15] seed = 15'b011011100010101;
-    logic        ready_fec; // Ready from FEC
-    logic        valid_in;  // Valid from testbench
-    logic        data_out;
-    logic        valid_out;
-    logic        ready_randomizer;    // Ready out from randomizer
-    
-    parameter CLK_PERIOD = 10;
+    bit data_in;
+    bit clk;
+    bit reset;
+    bit load;
+    bit en;
+    bit data_out;
+    bit ready_fec;
+    bit valid_in;
+    bit valid_out;
+    bit ready_prbs;
 
-    logic [0:95] data_in_sequence = 96'hACBCD2114DAE1577C6DBF4C9;
-    logic [0:95] data_out_expected = 96'h558AC4A53A1724E163AC2BF9;
-    logic [0:95] data_out_sequence;
+    bit [1:96] output_sequence;
+    bit [1:96] input_sequence = 96'hACBCD2114DAE1577C6DBF4C9;
+    bit [1:15] seed = 15'b011011100010101;
+    bit [1:96] expected_out = 96'h558AC4A53A1724E163AC2BF9;
+    integer i = 1;
+    // bit [95:0] expected_out = 96'h9FB2CA361E4271A35A4CA855;
 
-    // logic [1:15] seed = 15'b011011100010101;
+    prbs dut(
+            .data_in(data_in),
+            .clk(clk),
+            .reset(reset),
+            .load(load),
+            .en(en),
+            .seed(seed),
+            .ready_fec(ready_fec),
+            .valid_in(valid_in),
+            .valid_out(valid_out),
+            .ready_prbs(ready_prbs),
+            .data_out(data_out)
+            );
+            
+    initial forever #10 clk = ~clk;
 
-    // Clock gen
     initial begin
-        clk = 1;
-        forever #(CLK_PERIOD / 2) clk = ~clk;
-    end
-
-    // Instantiate the Device Under Test (DUT)
-    prbs dut (
-        .data_in(data_in),
-        .clk(clk),
-        .reset(reset),
-        .load(load),
-        .en(en),
-        .seed(seed),
-        .ready_fec(ready_fec),
-        .valid_in(valid_in),
-        .data_out(data_out),
-        .valid_out(valid_out),
-        .ready_randomizer(ready_randomizer)
-    );
-
-    // Test sequence
-    initial begin
-        // Reset sequence
+        clk = 0;
         reset = 0;
-        #(CLK_PERIOD);
         reset = 1;
-
-        load = 1;
-        en = 0;
-        valid_in = 0;
-        
-        while(!ready_randomizer) begin
-            #CLK_PERIOD;
-        end
-
-        load = 0;
-        en = 1;
-        valid_in = 1;
+        #20;
+        reset = 0; // Reset sequence
         ready_fec = 1;
-        data_in = data_in_sequence[0];
-        data_out_sequence[0] = data_out;
-        for(int pass = 0; pass < 5; pass++) begin
-            for(int i = 0; i < 96; i++) begin
-                data_in = data_in_sequence[i];
-                #(CLK_PERIOD/2);
-                data_out_sequence[i] = data_out;
-                #(CLK_PERIOD/2);
+        valid_in = 1;
+        en = 0;
+        load = 0;
+        #20; 
+         // time for load to happen
+        load = 1;
+        en = 1;
+        
+        repeat (96) begin @(posedge clk) begin
+                data_in = input_sequence[i];
+                #1;
+                output_sequence[i] = data_out;
+                i++;
+                #1;
+                load = 0;
             end
-            if(data_out_sequence === data_out_expected) begin
-                $display("Test %0d passed", pass);
-            end else begin
-                $display("Test %0d failed", pass);
-            end
+        end 
+
+        if(output_sequence == expected_out) begin
+            $display("Output: %h\t\tExpected: %h\tTEST PASSED", output_sequence, expected_out);
+        end else begin
+             $display("Output: %h\t\tExpected: %h\tTEST FAILED", output_sequence, expected_out);
         end
 
         $stop();
+
     end
+
+ 
+
+        // output check
+        // expected_out[0:95] = 96'h558AC4A53A1724E163AC2BF9;
+
+
 endmodule

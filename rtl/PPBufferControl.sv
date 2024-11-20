@@ -16,6 +16,7 @@ module PPBufferControl (
     input  logic q_B,
     
     input  logic valid_in,
+    input  logic ready_in,
     output logic ready_out,
     output logic valid_out,
     output logic q
@@ -64,14 +65,14 @@ always_comb begin
             end
         end
         WRITE_A: begin
-            if(bit_counter == 8'd191) begin
+            if((bit_counter == 8'd191) && (valid_in && ready_in)) begin
                 state_next = WRITE_B;
             end else begin
                 state_next = WRITE_A;
             end
         end
         WRITE_B: begin
-            if(bit_counter == 8'd191) begin
+            if((bit_counter == 8'd191) && (valid_in && ready_in)) begin
                 state_next = WRITE_A;
             end else begin
                 state_next = WRITE_B;
@@ -95,7 +96,7 @@ always_comb begin
             count_en           = 1'b0;
             clear_count_en     = 1'b0;
             clear_counter_resetN = 1'b0;
-            // valid_out          = 1'b0;
+
             ready_out          = 1'b0;
         end
         CLEAR: begin
@@ -110,7 +111,6 @@ always_comb begin
             clear_count_en     = 1'b1;
             clear_counter_resetN = 1'b1;
 
-            // valid_out          = 1'b0;
             ready_out          = (clear_counter == 1'b1);
         end
         WRITE_A: begin
@@ -125,7 +125,6 @@ always_comb begin
             clear_count_en     = 1'b0;
             clear_counter_resetN = 1'b0;
 
-            // valid_out          = 1'b1;
             ready_out          = 1'b1;
             
         end
@@ -141,7 +140,6 @@ always_comb begin
             clear_count_en     = 1'b0;
             clear_counter_resetN = 1'b0;
 
-            // valid_out          = 1'b1;
             ready_out          = 1'b1;
         end
     endcase
@@ -162,7 +160,7 @@ always_ff @(posedge clk or negedge bit_counter_resetN) begin
             bit_counter <= '0;
             valid_out <= 1'b1;
         end else begin
-            bit_counter <= bit_counter + 1;
+            bit_counter <= bit_counter + 1'b1;
         end
     end
 end
@@ -173,7 +171,7 @@ always_ff @(posedge clk or negedge clear_counter_resetN) begin
     end else if(clear_count_en == 1'b1) begin
 
         if(clear_counter == 1) clear_counter <= '0;
-        else                   clear_counter <= clear_counter + 1;
+        else                   clear_counter <= clear_counter + 1'b1;
     end
 end
 

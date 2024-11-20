@@ -407,6 +407,35 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.2 2021.04, Apr 14 2021
 13
 !s112 1.1
@@ -416,64 +445,64 @@ R0
 cModel Technology
 Z1 dD:/Study/FALL2024/ECNG 4104/Project/Phase1/sim
 T_opt
-Z2 !s110 1732020920
-VToZ;i=VV`OkJAgTzBzQSC2
+Z2 !s110 1732132532
+V2NCdbfkGbLMI;KIOlNa<_3
 04 18 4 work interleaver_top_tb fast 0
-=1-8c04ba9a6792-673c8ab8-10e-5d70
+=1-8c04ba9a6792-673e3eb4-137-6cc8
 !s124 OEM10U7 
-Z3 o-quiet -auto_acc_if_foreign -work work -L altera_mf +acc
-Z4 tCvgOpt 0
+o-quiet -auto_acc_if_foreign -work work -L altera_mf +acc
+Z3 tCvgOpt 0
 n@_opt
-Z5 OL;O;2021.2;73
+Z4 OL;O;2021.2;73
 R1
 T_opt1
-!s110 1731918037
-VQjdoA:4RDU[WMhzfAfU`R3
-04 11 4 work PPBuffer_tb fast 0
-=1-8c04ba9a6792-673af8d5-97-6398
-!s124 OEM10U5 
+!s110 1732132520
+Vdb177]RHPCe>752VFBGoa1
+04 14 4 work interleaver_tb fast 0
+=1-8c04ba9a6792-673e3ea8-1e-6404
+Z5 !s124 OEM10U2 
+Z6 o-quiet -auto_acc_if_foreign -work work +acc
 R3
-R4
 n@_opt1
-R5
+R4
 R1
 T_opt2
-!s110 1732109255
-VzEIb<iQFVeo=]jWi7DjLZ2
+Z7 !s110 1732134520
+V1`e0I]E]_zTEYm8[M4oI=2
 04 7 4 work prbs_tb fast 0
-=1-8c04ba9a6792-673de3c7-ee-68b4
-!s124 OEM10U2 
-o-quiet -auto_acc_if_foreign -work work +acc
-R4
-n@_opt2
+=1-8c04ba9a6792-673e4678-132-59a8
 R5
+R6
+R3
+n@_opt2
+R4
 vinterleaver
-Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z7 !s110 1732109254
+Z8 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z9 !s110 1732134519
 !i10b 1
-!s100 UKoKlR0c<]eMW3jjfRglA3
-Im9AQ`AFnT<c_T]bgOHefC3
+!s100 g6cJ_?=8Dz5Qzk]o?U>mc2
+IGUK@fhN`=H`o:[PMdS4Fh1
 S1
 R1
-w1732099974
+w1732123395
 8../rtl/interleaver.sv
 F../rtl/interleaver.sv
-!i122 1317
-Z8 L0 1 58
-Z9 VDg1SIo80bB@j0V0VzS_@n1
-Z10 OL;L;2021.2;73
+!i122 1403
+L0 1 58
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+Z11 OL;L;2021.2;73
 r1
 !s85 0
 31
-Z11 !s108 1732109254.000000
-Z12 !s107 ../rtl/prbs.sv|../rtl/interleaver_top.sv|../rtl/interleaver.sv|../rtl/ReadControl.sv|../rtl/PPBufferControl.sv|../rtl/PPBuffer.sv|
-Z13 !s90 -reportprogress|300|-sv|../rtl/PPBuffer.sv|../rtl/PPBufferControl.sv|../rtl/ReadControl.sv|../rtl/interleaver.sv|../rtl/interleaver_top.sv|../rtl/prbs.sv|
+Z12 !s108 1732134519.000000
+Z13 !s107 ../rtl/prbs.sv|../rtl/interleaver_top.sv|../rtl/interleaver.sv|../rtl/PPBufferControl.sv|../rtl/PPBuffer.sv|
+Z14 !s90 -reportprogress|300|-sv|../rtl/PPBuffer.sv|../rtl/PPBufferControl.sv|../rtl/interleaver.sv|../rtl/interleaver_top.sv|../rtl/prbs.sv|
 !i113 0
-Z14 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R4
+Z15 o-sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
 vinterleaver_tb
-R6
-!s110 1731917062
+R8
+!s110 1732132519
 !i10b 1
 !s100 IU:YRI<bjYd0G90gch[051
 IWiH`JmNYEQom_@aSG]7TK2
@@ -482,70 +511,70 @@ R1
 w1731917026
 8interleaver_tb.sv
 Finterleaver_tb.sv
-!i122 851
+!i122 1391
 L0 3 111
-R9
 R10
+R11
 r1
 !s85 0
 31
-!s108 1731917062.000000
+!s108 1732132519.000000
 !s107 interleaver_tb.sv|
 !s90 -reportprogress|300|-sv|interleaver_tb.sv|
 !i113 0
-R14
-R4
+R15
+R3
 vinterleaver_top
-R6
-R7
+R8
+R9
 !i10b 1
-!s100 j6oTEEA>>F1R9;L9VL7?c0
-I7FnC==Q5=[KF:i357P1K93
+!s100 g^b3zN5zU^P]DLHOO_CN>1
+I1gQedC]cKO3gkKaAdNk9M1
 S1
 R1
-w1732100908
+w1732132456
 8../rtl/interleaver_top.sv
 F../rtl/interleaver_top.sv
-!i122 1317
-L0 1 77
-R9
+!i122 1403
+L0 1 61
 R10
+R11
 r1
 !s85 0
 31
-R11
 R12
 R13
-!i113 0
 R14
-R4
+!i113 0
+R15
+R3
 vinterleaver_top_tb
-R6
+R8
 R2
 !i10b 1
-!s100 mLaXfc]Lg3HQ>j>PER@iL3
-I15E;lzldYl7PhZTQiVZ120
+!s100 ?8]iRS?cH`lUiYLeBjloh3
+I5Ib6UT_?T0fNbnBXb@jX_0
 S1
 R1
-w1732020899
+w1732132465
 8interleaver_top_tb.sv
 Finterleaver_top_tb.sv
-!i122 1305
-L0 1 108
-R9
+!i122 1394
+L0 1 105
 R10
+R11
 r1
 !s85 0
 31
-Z15 !s108 1732020919.000000
+Z16 !s108 1732132531.000000
 !s107 interleaver_top_tb.sv|
 !s90 -reportprogress|300|-sv|interleaver_top_tb.sv|
 !i113 0
-R14
-R4
+R15
+R3
 vout_interlace
-R6
-Z16 !s110 1731774445
+R8
+Z17 !s110 1731774445
 !i10b 1
 !s100 E:k7;VC=;=d^_VJD;bc<D1
 IMh3l@WV;3DL65e@82Q_6A3
@@ -556,19 +585,19 @@ w1731504580
 F../rtl/out_interlace.sv
 !i122 545
 L0 1 10
-R9
 R10
+R11
 r1
 !s85 0
 31
-Z17 !s108 1731774444.000000
-Z18 !s107 ../rtl/out_interlace.sv|../rtl/interleaver.sv|../rtl/SPI_FSM.sv|../rtl/PPBufferControl.sv|../rtl/PPBuffer.sv|
-Z19 !s90 -reportprogress|300|-sv|../rtl/PPBuffer.sv|../rtl/PPBufferControl.sv|../rtl/SPI_FSM.sv|../rtl/interleaver.sv|../rtl/out_interlace.sv|
+Z18 !s108 1731774444.000000
+Z19 !s107 ../rtl/out_interlace.sv|../rtl/interleaver.sv|../rtl/SPI_FSM.sv|../rtl/PPBufferControl.sv|../rtl/PPBuffer.sv|
+Z20 !s90 -reportprogress|300|-sv|../rtl/PPBuffer.sv|../rtl/PPBufferControl.sv|../rtl/SPI_FSM.sv|../rtl/interleaver.sv|../rtl/out_interlace.sv|
 !i113 0
-R14
-R4
+R15
+R3
 vout_interlace_tb
-R6
+R8
 !s110 1731505977
 !i10b 1
 !s100 ]6H>KB[4C_T?ZRj_mP4@M1
@@ -580,8 +609,8 @@ w1731505972
 Fout_interlace_tb.sv
 !i122 114
 L0 1 50
-R9
 R10
+R11
 r1
 !s85 0
 31
@@ -589,35 +618,35 @@ r1
 !s107 out_interlace_tb.sv|
 !s90 -reportprogress|300|-sv|out_interlace_tb.sv|
 !i113 0
-R14
-R4
+R15
+R3
 vPPBuffer
-R6
-R7
-!i10b 1
-!s100 gaLlXXWD[`<gCIKL<GGP=3
-I^i62SnIZXblgUFT^NbPmf3
-S1
-R1
-w1732096000
-8../rtl/PPBuffer.sv
-F../rtl/PPBuffer.sv
-!i122 1317
 R8
 R9
+!i10b 1
+!s100 8W^R5c:`:H^k?^hTWbLXg2
+Ie??MbIZ7FZQ:QLfO3Jc^H1
+S1
+R1
+w1732132516
+8../rtl/PPBuffer.sv
+F../rtl/PPBuffer.sv
+!i122 1403
+L0 1 59
 R10
+R11
 r1
 !s85 0
 31
-R11
 R12
 R13
-!i113 0
 R14
-R4
+!i113 0
+R15
+R3
 n@p@p@buffer
 vPPBuffer_tb
-R6
+R8
 !s110 1731918150
 !i10b 1
 !s100 [1]f:LCTN3k1;LAU2cdzR3
@@ -629,8 +658,8 @@ w1731881504
 FPPBuffer_tb.sv
 !i122 890
 L0 1 89
-R9
 R10
+R11
 r1
 !s85 0
 31
@@ -638,84 +667,108 @@ r1
 !s107 PPBuffer_tb.sv|
 !s90 -reportprogress|300|-sv|PPBuffer_tb.sv|
 !i113 0
-R14
-R4
+R15
+R3
 n@p@p@buffer_tb
 vPPBufferControl
-R6
-R7
+R8
+R9
 !i10b 1
-!s100 HOCY15UbVc3_1S=;P[OEO2
-I:Q_XX4WH4n^TkiW1jX<al3
+!s100 8iaH[XJi;>:7<DKF:Y23Z0
+I5hDmzAS8FRJNQ?_`]nGzm3
 S1
 R1
-w1732020839
+w1732132094
 8../rtl/PPBufferControl.sv
 F../rtl/PPBufferControl.sv
-!i122 1317
-L0 1 180
-R9
+!i122 1403
+L0 1 178
 R10
+R11
 r1
 !s85 0
 31
-R11
 R12
 R13
-!i113 0
 R14
-R4
+!i113 0
+R15
+R3
 n@p@p@buffer@control
 vprbs
-R6
-R7
+R8
+R9
 !i10b 1
-!s100 5H@QCe]=FWmGLB6QR9Il^1
-I_zXChUO=5=OfjnI:PU15c3
+!s100 X9FRb<^WeA_EM3M_5Y<A?1
+I6FBleo`KKgbkoFH5j[KF41
 S1
 R1
-w1732109116
+w1732133697
 8../rtl/prbs.sv
 F../rtl/prbs.sv
-!i122 1317
-L0 1 68
-R9
+!i122 1403
+L0 1 54
 R10
+R11
 r1
 !s85 0
 31
-R11
 R12
 R13
-!i113 0
 R14
-R4
+!i113 0
+R15
+R3
 vprbs_tb
-R6
+R8
 R7
 !i10b 1
-!s100 o8Mno0JfeoakI1DgNPjF[0
-I1DKjGzzf1Vco[kL^=Sln@2
+!s100 TUbe2IAe<mjojd=fdl>a43
+IjRbUgTinZY1@X>Nhz4XB71
 S1
 R1
-w1732109243
-Z20 8prbs_tb.sv
-Z21 Fprbs_tb.sv
-!i122 1318
-L0 1 84
-R9
+w1732134436
+Z21 8prbs_tb.sv
+Z22 Fprbs_tb.sv
+!i122 1404
+L0 1 78
 R10
+R11
 r1
 !s85 0
 31
-R11
-Z22 !s107 prbs_tb.sv|
-Z23 !s90 -reportprogress|300|-sv|prbs_tb.sv|
+R12
+Z23 !s107 prbs_tb.sv|
+Z24 !s90 -reportprogress|300|-sv|prbs_tb.sv|
 !i113 0
-R14
-R4
+R15
+R3
+vprbs_top
+R8
+Z25 !s110 1732132531
+!i10b 1
+!s100 5@niR4Q99T5E8VHzQfV8>3
+IBz>]Beai9`WmSn9@nM9?X0
+S1
+R1
+w1732121204
+8../rtl/prbs_top.sv
+F../rtl/prbs_top.sv
+!i122 1392
+L0 1 40
+R10
+R11
+r1
+!s85 0
+31
+R16
+Z26 !s107 ../rtl/prbs_top.sv|../rtl/prbsControl.sv|../rtl/prbs.sv|../rtl/interleaver_top.sv|../rtl/interleaver.sv|../rtl/ReadControl.sv|../rtl/PPBufferControl.sv|../rtl/PPBuffer.sv|
+Z27 !s90 -reportprogress|300|-sv|../rtl/PPBuffer.sv|../rtl/PPBufferControl.sv|../rtl/ReadControl.sv|../rtl/interleaver.sv|../rtl/interleaver_top.sv|../rtl/prbs.sv|../rtl/prbsControl.sv|../rtl/prbs_top.sv|
+!i113 0
+R15
+R3
 vprbs_verify_tb
-R6
+R8
 !s110 1731258599
 !i10b 1
 !s100 J53I[;fkm`^gWG7@F;[3D0
@@ -723,24 +776,49 @@ IDT8dNoa[984C@<fhUJlV@3
 S1
 R1
 w1731258548
-R20
 R21
+R22
 !i122 1
 L0 3 104
-R9
 R10
+R11
 r1
 !s85 0
 31
 !s108 1731258599.000000
-R22
 R23
+R24
 !i113 0
-R14
-R4
+R15
+R3
+vprbsControl
+R8
+R25
+!i10b 1
+!s100 kMTIze2:TBZC?hj>>FV]l0
+I5C7nUF1TicV=cTDFT7lD40
+S1
+R1
+w1732121710
+8../rtl/prbsControl.sv
+F../rtl/prbsControl.sv
+!i122 1392
+L0 1 87
+R10
+R11
+r1
+!s85 0
+31
+R16
+R26
+R27
+!i113 0
+R15
+R3
+nprbs@control
 vReadControl
-R6
-R7
+R8
+!s110 1732134080
 !i10b 1
 !s100 J32h8ToXQn[D_V8Daa3d;0
 I8VnhEJj[0ob>M;ICHDOFO1
@@ -749,48 +827,48 @@ R1
 w1732096096
 8../rtl/ReadControl.sv
 F../rtl/ReadControl.sv
-!i122 1317
+!i122 1401
 L0 1 95
-R9
 R10
+R11
 r1
 !s85 0
 31
-R11
-R12
-R13
+!s108 1732134080.000000
+!s107 ../rtl/prbs.sv|../rtl/interleaver_top.sv|../rtl/interleaver.sv|../rtl/ReadControl.sv|../rtl/PPBuffer.sv|
+!s90 -reportprogress|300|-sv|../rtl/PPBuffer.sv|../rtl/ReadControl.sv|../rtl/interleaver.sv|../rtl/interleaver_top.sv|../rtl/prbs.sv|
 !i113 0
-R14
-R4
+R15
+R3
 n@read@control
 vSDPR
-R6
-!s110 1732020919
+R8
+R25
 !i10b 1
-!s100 EI56BNmOGPG_Y1M>[fh`I1
-IdUFzzLB2^n4AUhgIXJ16H2
+!s100 3Uc;ofUHRUbD76`]Q?2M@1
+ILCfnJSPS`CA1[X]@<c=101
 S1
 R1
-w1731709047
+w1732095771
 8../ip/SDPR.v
 F../ip/SDPR.v
-!i122 1304
+!i122 1393
 L0 40 78
-R9
 R10
+R11
 r1
 !s85 0
 31
-R15
+R16
 !s107 ../ip/SDPR.v|
 !s90 -reportprogress|300|-sv|../ip/SDPR.v|
 !i113 0
-R14
-R4
+R15
+R3
 n@s@d@p@r
 vSPI_FSM
-R6
-R16
+R8
+R17
 !i10b 1
 !s100 nPGmLKT>B5N]HJP=c>kOM2
 Iz419<2BLLMOgNNc@TY<a=3
@@ -801,20 +879,20 @@ w1731412862
 F../rtl/SPI_FSM.sv
 !i122 545
 L0 1 93
-R9
 R10
+R11
 r1
 !s85 0
 31
-R17
 R18
 R19
+R20
 !i113 0
-R14
-R4
+R15
+R3
 n@s@p@i_@f@s@m
 vSPI_FSM_tb
-R6
+R8
 !s110 1731412836
 !i10b 1
 !s100 >OeJW1f6h9J:nA@XVRk5W1
@@ -826,8 +904,8 @@ w1731277925
 FSPI_FSM_tb.sv
 !i122 80
 L0 1 90
-R9
 R10
+R11
 r1
 !s85 0
 31
@@ -835,6 +913,6 @@ r1
 !s107 SPI_FSM_tb.sv|
 !s90 -reportprogress|300|-sv|SPI_FSM_tb.sv|
 !i113 0
-R14
-R4
+R15
+R3
 n@s@p@i_@f@s@m_tb

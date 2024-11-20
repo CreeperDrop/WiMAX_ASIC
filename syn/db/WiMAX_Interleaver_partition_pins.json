@@ -4,11 +4,43 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "data_out_index[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_index[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_index[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_index[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_index[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_index[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_index[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_out_index[7]",
+					"strict" : false
+				},
+				{
 					"name" : "data_out",
 					"strict" : false
 				},
 				{
-					"name" : "valid_out",
+					"name" : "valid_interleaver",
 					"strict" : false
 				},
 				{
@@ -20,15 +52,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "valid_in",
-					"strict" : false
-				},
-				{
 					"name" : "resetN",
 					"strict" : false
 				},
 				{
 					"name" : "data_in",
+					"strict" : false
+				},
+				{
+					"name" : "ready_in",
+					"strict" : false
+				},
+				{
+					"name" : "valid_in",
 					"strict" : false
 				}
 			]
