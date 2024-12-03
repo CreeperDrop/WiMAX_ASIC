@@ -11,8 +11,18 @@ module WiMAX_PHY_top(
     
     output logic        ready_out,      // ready from TB to modulator
     output logic        valid_out,      // Valid out to TB
+
+    output logic        pll_locked,
+    output logic        prbs_out,
+    output logic        prbs_valid,
+    output logic        fec_out,
+    output logic        fec_valid,
+    output logic        interleaver_out,
+    output logic        interleaver_valid,
     output logic [15:0] I_comp,
-    output logic [15:0] Q_comp
+    output logic [15:0] Q_comp,
+
+
 );
 
 // PLL Wires
