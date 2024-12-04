@@ -27,22 +27,23 @@ module prbs(
         begin
             r_reg <= '0;
             ready_prbs <= 1'b0;
-            valid_out_ff <= 1'b0;
+            valid_out <= 1'b0;
             counter <= '0;
+            data_out <= '0;
         end
         else if(load == 1'b1)
         begin
             r_reg <= SEED;
             ready_prbs <= 1'b1;
-            valid_out_ff <= 1'b1;
+            valid_out <= 1'b0;
         end
         else if((en /*&& ready_fec */&& valid_in) == 1'b1)
         begin
             r_reg <= r_next;
             ready_prbs <= 1'b1;
-            valid_out_ff <= 1'b1;
+            valid_out <= 1'b1;
             data_out <= data_in ^ lfsrXOR;
-            counter <= 7'b0;
+            // counter <= 7'b0;
 
                 if(counter == 7'd95) begin
                     counter <= 0;
@@ -54,9 +55,9 @@ module prbs(
 
     end
 
-    always_ff @(posedge clk) begin
-        valid_out <= valid_out_ff;
-    end
+    // always_ff @(posedge clk) begin
+    //     valid_out <= valid_out_ff;
+    // end
 
     always_comb
     begin
