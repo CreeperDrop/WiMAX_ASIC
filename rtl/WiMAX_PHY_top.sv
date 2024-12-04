@@ -22,7 +22,7 @@ module WiMAX_PHY_top(
     output logic        interleaver_out,
     output logic        interleaver_valid,
     output logic [15:0] I_comp,
-    output logic [15:0] Q_comp,
+    output logic [15:0] Q_comp
 
 
 );
@@ -80,6 +80,8 @@ prbs randomizer_U0(
     .data_out(data_out_to_fec)
 );
 
+assign prbs_out = data_out_to_fec;
+assign prbs_valid = valid_out_to_fec;
 
 fec_encoder_wimax_phy fec_encoder_U1(
     .clk_50(clk_50),
@@ -93,6 +95,9 @@ fec_encoder_wimax_phy fec_encoder_U1(
     .data_out(data_out_fec)
 );
 
+assign fec_out = data_out_fec;
+assign fec_valid = valid_out_fec;
+
 interleaver_top interleaver_U2(
     .clk(clk_100),                             // 100Mhz clock
     .reset_N(reset_N),                         // Reset (active low)
@@ -103,6 +108,9 @@ interleaver_top interleaver_U2(
     .ready_out(ready_out_interleaver),         // ready going to FEC
     .data_out(data_out_interleaver)            // data going out to modulator
 );
+
+assign interleaver_out = data_out_interleaver;
+assign interleaver_valid = valid_out_interleaver;
 
 qpsk_MOD qpsk_MOD_U3(
     .Reset_N(reset_N),                          // Reset (active low)
@@ -116,6 +124,7 @@ qpsk_MOD qpsk_MOD_U3(
     .Q_comp(Q_comp),                            // output of Modulator (16 bits) to represent Q component
     .ready_out(ready_interleaver)               // output ready going to interleaver
 );
+
 
 
 endmodule

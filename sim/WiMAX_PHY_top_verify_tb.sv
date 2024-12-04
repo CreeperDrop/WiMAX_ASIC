@@ -1,3 +1,6 @@
+import Package_wimax::*; 
+`timescale 1ns / 1ps
+
 module WiMAX_PHY_top_verify_tb();
 
 bit clk_ref;
@@ -10,8 +13,16 @@ bit fec_pass;
 bit interleaver_pass;
 bit modulator_pass;
 
+
+initial begin
+    clk_ref = 1;
+    forever begin
+        #CLK_50_HALF_PERIOD clk_ref = ~clk_ref;
+    end
+end
+
 WiMAX_PHY_top_verify dut (
-    
+
     .clk_ref(clk_ref),        // Reference (50 MHz)
     .reset_N(reset_N),        // Reset (active low)
     .load(load),           // load for PRBS to load seed
@@ -24,5 +35,33 @@ WiMAX_PHY_top_verify dut (
     .modulator_pass(modulator_pass)
 
 );
+
+initial begin
+    // Reset sequence
+    
+    reset_N = 0;
+    #(CLK_50_PERIOD);
+    reset_N = 1;
+       
+    wait(dut.pll_locked == 1'b1);
+    // dut.randomizer_ready_out = 1;
+    // #(1*CLK_50_PERIOD);
+    // Load sequence
+    load = 1; // for PRBS to load seed
+    #(1*CLK_50_PERIOD);
+    load = 0;
+
+    // #(1*CLK_50_PERIOD);
+    
+    // Enable sequence
+    en = 1; // for PRBS to start working
+    // #(1*CLK_50_PERIOD);
+    // en = 0;
+
+    #25_000;
+    $stop();
+    
+    
+end
 
 endmodule
