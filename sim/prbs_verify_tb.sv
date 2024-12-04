@@ -13,7 +13,7 @@ logic pass;
 prbs_verify prbs_verify_inst(.clk(clk), .reset_N(reset_N), .load(load), .en(en), .pass(pass));
 
 initial begin
-    clk = 1'b1;
+    clk = 1'b0;
     forever #10 clk = ~clk;
 end
 

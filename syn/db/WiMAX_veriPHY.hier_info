@@ -1,11 +1,11 @@
 |WiMAX_PHY_top_verify
 clk_ref => clk_ref.IN1
-reset_N => reset_N.IN1
+reset_N => reset_N.IN3
 load => load.IN1
 en => en.IN1
-prbs_pass <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
-fec_pass <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
-interleaver_pass <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
+prbs_pass <= prbs_pass.DB_MAX_OUTPUT_PORT_TYPE
+fec_pass <= fec_pass.DB_MAX_OUTPUT_PORT_TYPE
+interleaver_pass <= interleaver_pass.DB_MAX_OUTPUT_PORT_TYPE
 modulator_pass <= Equal8.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -256,7 +256,6 @@ zdbfbclk <> <GND>
 
 |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0
 data_in => data_out.IN1
-clk => valid_out~reg0.CLK
 clk => data_out~reg0.CLK
 clk => counter[0].CLK
 clk => counter[1].CLK
@@ -265,7 +264,7 @@ clk => counter[3].CLK
 clk => counter[4].CLK
 clk => counter[5].CLK
 clk => counter[6].CLK
-clk => valid_out_ff.CLK
+clk => valid_out~reg0.CLK
 clk => ready_prbs~reg0.CLK
 clk => r_reg[15].CLK
 clk => r_reg[14].CLK
@@ -282,6 +281,7 @@ clk => r_reg[4].CLK
 clk => r_reg[3].CLK
 clk => r_reg[2].CLK
 clk => r_reg[1].CLK
+reset_N => data_out~reg0.ACLR
 reset_N => counter[0].ACLR
 reset_N => counter[1].ACLR
 reset_N => counter[2].ACLR
@@ -289,7 +289,7 @@ reset_N => counter[3].ACLR
 reset_N => counter[4].ACLR
 reset_N => counter[5].ACLR
 reset_N => counter[6].ACLR
-reset_N => valid_out_ff.ACLR
+reset_N => valid_out~reg0.ACLR
 reset_N => ready_prbs~reg0.ACLR
 reset_N => r_reg[15].ACLR
 reset_N => r_reg[14].ACLR
@@ -306,7 +306,6 @@ reset_N => r_reg[4].ACLR
 reset_N => r_reg[3].ACLR
 reset_N => r_reg[2].ACLR
 reset_N => r_reg[1].ACLR
-reset_N => data_out~reg0.ENA
 load => r_reg.OUTPUTSELECT
 load => r_reg.OUTPUTSELECT
 load => r_reg.OUTPUTSELECT
@@ -323,8 +322,8 @@ load => r_reg.OUTPUTSELECT
 load => r_reg.OUTPUTSELECT
 load => r_reg.OUTPUTSELECT
 load => ready_prbs.OUTPUTSELECT
-load => valid_out_ff.OUTPUTSELECT
-load => data_out.OUTPUTSELECT
+load => valid_out.OUTPUTSELECT
+load => data_out~reg0.ENA
 load => counter[6].ENA
 load => counter[5].ENA
 load => counter[4].ENA

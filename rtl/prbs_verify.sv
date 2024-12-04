@@ -64,11 +64,17 @@ always_ff @(posedge clk or negedge reset_N) begin
     if(~reset_N) begin
         pass_counter <= 7'd95;
     end else if(valid_out) begin
-        pass_counter <= i;
+        // pass_counter <= i;
             if(out_data_rom[pass_counter] !== data_out) begin
                 error_count <= error_count + 1;
-                $display("Expected: %b Got: %b", out_data_rom[i], data_out);
+                // $display("Expected: %b Got: %b", out_data_rom[i], data_out);
             end
+
+        if(pass_counter == 7'd0) begin
+            pass_counter <= 7'd95;
+        end else begin
+            pass_counter <= pass_counter - 1;
+        end
 
     end
 end

@@ -16,6 +16,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "modulator_pass",
+					"strict" : false
+				},
+				{
 					"name" : "reset_N",
 					"strict" : false
 				},

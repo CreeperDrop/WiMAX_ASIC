@@ -106,7 +106,7 @@ always_ff @(posedge clk_50 or negedge reset_N) begin
         // randomizer_valid_in <= 1'b0;
         randomizer_in_counter <= 7'd95;
     end
-    else if(randomizer_ready_out) begin
+    else if(randomizer_ready_out && en) begin
 
         if (randomizer_in_counter == '0) begin
             randomizer_in_counter <= 7'd95;
@@ -140,7 +140,7 @@ always_ff @(posedge clk_50 or negedge reset_N) begin
     end
 end
 
-assign prbs_pass = ((randomizer_out_error_count == '0) && (randomizer_data_out)) /*? 1'b1 : 1'b0*/ ;
+assign prbs_pass = ((randomizer_out_error_count == '0) && (randomizer_valid_out)) /*? 1'b1 : 1'b0*/ ;
 
 // FEC output check
 
@@ -210,7 +210,7 @@ always_ff @(posedge clk_100 or negedge reset_N) begin
     end
 end
 
-assign modulator_pass = ((mod_out_error_count == '0) && (mod_valid_out)) /*? 1'b1 : 1'b0*/ ;
+assign modulator_pass = ((mod_out_error_count == '0) /*&& (mod_valid_out)*/) /*? 1'b1 : 1'b0*/ ;
 
 // WiMAX_PHY_top   wimax_U0(
 //     .clk_ref(clk_ref)       

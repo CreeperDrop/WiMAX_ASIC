@@ -1,5 +1,5 @@
 Analysis & Synthesis report for WiMAX_veriPHY
-Wed Dec  4 15:19:04 2024
+Thu Dec  5 00:23:41 2024
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -19,27 +19,26 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
  11. State Machine - |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|output_state
  12. State Machine - |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|input_state
  13. Registers Removed During Synthesis
- 14. Removed Registers Triggering Further Register Optimizations
- 15. General Register Statistics
- 16. Inverted Register Statistics
- 17. Multiplexer Restructuring Statistics (Restructuring Performed)
- 18. Source assignments for WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR|altsyncram:altsyncram_component|altsyncram_6in2:auto_generated
- 19. Source assignments for WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component|altsyncram_b432:auto_generated
- 20. Source assignments for WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB|altsyncram:altsyncram_component|altsyncram_b432:auto_generated
- 21. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst|PLL_50_100_0002:pll_50_100_inst|altera_pll:altera_pll_i
- 22. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR|altsyncram:altsyncram_component
- 23. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2
- 24. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|interleaver:Interleaver_inst
- 25. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component
- 26. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB|altsyncram:altsyncram_component
- 27. altsyncram Parameter Settings by Entity Instance
- 28. Port Connectivity Checks: "WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|interleaver:Interleaver_inst"
- 29. Port Connectivity Checks: "WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR"
- 30. Port Connectivity Checks: "WiMAX_PHY_top:WiMAX_PHY_U0"
- 31. Post-Synthesis Netlist Statistics for Top Partition
- 32. Elapsed Time Per Partition
- 33. Analysis & Synthesis Messages
- 34. Analysis & Synthesis Suppressed Messages
+ 14. General Register Statistics
+ 15. Inverted Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR|altsyncram:altsyncram_component|altsyncram_6in2:auto_generated
+ 18. Source assignments for WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component|altsyncram_b432:auto_generated
+ 19. Source assignments for WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB|altsyncram:altsyncram_component|altsyncram_b432:auto_generated
+ 20. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst|PLL_50_100_0002:pll_50_100_inst|altera_pll:altera_pll_i
+ 21. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR|altsyncram:altsyncram_component
+ 22. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2
+ 23. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|interleaver:Interleaver_inst
+ 24. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component
+ 25. Parameter Settings for User Entity Instance: WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB|altsyncram:altsyncram_component
+ 26. altsyncram Parameter Settings by Entity Instance
+ 27. Port Connectivity Checks: "WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|interleaver:Interleaver_inst"
+ 28. Port Connectivity Checks: "WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR"
+ 29. Port Connectivity Checks: "WiMAX_PHY_top:WiMAX_PHY_U0"
+ 30. Post-Synthesis Netlist Statistics for Top Partition
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -66,13 +65,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Dec  4 15:19:04 2024          ;
+; Analysis & Synthesis Status     ; Successful - Thu Dec  5 00:23:41 2024          ;
 ; Quartus Prime Version           ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
 ; Revision Name                   ; WiMAX_veriPHY                                  ;
 ; Top-level Entity Name           ; WiMAX_PHY_top_verify                           ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 192                                            ;
+; Total registers                 ; 211                                            ;
 ; Total pins                      ; 8                                              ;
 ; Total virtual pins              ; 0                                              ;
 ; Total block memory bits         ; 704                                            ;
@@ -229,16 +228,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimate of Logic utilization (ALMs needed) ; 253           ;
+; Estimate of Logic utilization (ALMs needed) ; 277           ;
 ;                                             ;               ;
-; Combinational ALUT usage for logic          ; 402           ;
+; Combinational ALUT usage for logic          ; 437           ;
 ;     -- 7 input functions                    ; 3             ;
-;     -- 6 input functions                    ; 92            ;
-;     -- 5 input functions                    ; 44            ;
-;     -- 4 input functions                    ; 25            ;
-;     -- <=3 input functions                  ; 238           ;
+;     -- 6 input functions                    ; 105           ;
+;     -- 5 input functions                    ; 42            ;
+;     -- 4 input functions                    ; 24            ;
+;     -- <=3 input functions                  ; 263           ;
 ;                                             ;               ;
-; Dedicated logic registers                   ; 192           ;
+; Dedicated logic registers                   ; 211           ;
 ;                                             ;               ;
 ; I/O pins                                    ; 8             ;
 ; Total MLAB memory bits                      ; 0             ;
@@ -250,8 +249,8 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 2             ;
 ;                                             ;               ;
 ; Maximum fan-out node                        ; reset_N~input ;
-; Maximum fan-out                             ; 183           ;
-; Total fan-out                               ; 2260          ;
+; Maximum fan-out                             ; 211           ;
+; Total fan-out                               ; 2454          ;
 ; Average fan-out                             ; 3.67          ;
 +---------------------------------------------+---------------+
 
@@ -261,18 +260,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                    ; Entity Name           ; Library Name ;
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
-; |WiMAX_PHY_top_verify                              ; 402 (111)           ; 192 (54)                  ; 704               ; 0          ; 8    ; 0            ; |WiMAX_PHY_top_verify                                                                                                                                                                  ; WiMAX_PHY_top_verify  ; work         ;
-;    |WiMAX_PHY_top:WiMAX_PHY_U0|                    ; 291 (0)             ; 138 (0)                   ; 704               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0                                                                                                                                       ; WiMAX_PHY_top         ; work         ;
+; |WiMAX_PHY_top_verify                              ; 437 (137)           ; 211 (67)                  ; 704               ; 0          ; 8    ; 0            ; |WiMAX_PHY_top_verify                                                                                                                                                                  ; WiMAX_PHY_top_verify  ; work         ;
+;    |WiMAX_PHY_top:WiMAX_PHY_U0|                    ; 300 (0)             ; 144 (0)                   ; 704               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0                                                                                                                                       ; WiMAX_PHY_top         ; work         ;
 ;       |PLL_50_100:PLL_inst|                        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst                                                                                                                   ; PLL_50_100            ; PLL_50_100   ;
 ;          |PLL_50_100_0002:pll_50_100_inst|         ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst|PLL_50_100_0002:pll_50_100_inst                                                                                   ; PLL_50_100_0002       ; PLL_50_100   ;
 ;             |altera_pll:altera_pll_i|              ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst|PLL_50_100_0002:pll_50_100_inst|altera_pll:altera_pll_i                                                           ; altera_pll            ; work         ;
-;       |fec_encoder_wimax_phy:fec_encoder_U1|       ; 225 (225)           ; 84 (84)                   ; 192               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1                                                                                                  ; fec_encoder_wimax_phy ; work         ;
+;       |fec_encoder_wimax_phy:fec_encoder_U1|       ; 223 (223)           ; 84 (84)                   ; 192               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1                                                                                                  ; fec_encoder_wimax_phy ; work         ;
 ;          |FEC_DPR:fec_encoder_DPR|                 ; 0 (0)               ; 0 (0)                     ; 192               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR                                                                          ; FEC_DPR               ; work         ;
 ;             |altsyncram:altsyncram_component|      ; 0 (0)               ; 0 (0)                     ; 192               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR|altsyncram:altsyncram_component                                          ; altsyncram            ; work         ;
 ;                |altsyncram_6in2:auto_generated|    ; 0 (0)               ; 0 (0)                     ; 192               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR|altsyncram:altsyncram_component|altsyncram_6in2:auto_generated           ; altsyncram_6in2       ; work         ;
-;       |interleaver_top:interleaver_U2|             ; 43 (10)             ; 29 (8)                    ; 512               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2                                                                                                        ; interleaver_top       ; work         ;
-;          |PPBuffer:PingPongBuffer_inst|            ; 16 (0)              ; 13 (0)                    ; 512               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst                                                                           ; PPBuffer              ; work         ;
-;             |PPBufferControl:BufferControl|        ; 16 (16)             ; 13 (13)                   ; 0                 ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|PPBufferControl:BufferControl                                             ; PPBufferControl       ; work         ;
+;       |interleaver_top:interleaver_U2|             ; 49 (10)             ; 30 (8)                    ; 512               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2                                                                                                        ; interleaver_top       ; work         ;
+;          |PPBuffer:PingPongBuffer_inst|            ; 22 (0)              ; 14 (0)                    ; 512               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst                                                                           ; PPBuffer              ; work         ;
+;             |PPBufferControl:BufferControl|        ; 22 (22)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|PPBufferControl:BufferControl                                             ; PPBufferControl       ; work         ;
 ;             |SDPR:BankA|                           ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA                                                                ; SDPR                  ; work         ;
 ;                |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component                                ; altsyncram            ; work         ;
 ;                   |altsyncram_b432:auto_generated| ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component|altsyncram_b432:auto_generated ; altsyncram_b432       ; work         ;
@@ -280,7 +279,8 @@ https://fpgasoftware.intel.com/eula.
 ;                |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB|altsyncram:altsyncram_component                                ; altsyncram            ; work         ;
 ;                   |altsyncram_b432:auto_generated| ; 0 (0)               ; 0 (0)                     ; 256               ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB|altsyncram:altsyncram_component|altsyncram_b432:auto_generated ; altsyncram_b432       ; work         ;
 ;          |interleaver:Interleaver_inst|            ; 17 (17)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|interleaver:Interleaver_inst                                                                           ; interleaver           ; work         ;
-;       |prbs:randomizer_U0|                         ; 23 (23)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0                                                                                                                    ; prbs                  ; work         ;
+;       |prbs:randomizer_U0|                         ; 24 (24)             ; 25 (25)                   ; 0                 ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0                                                                                                                    ; prbs                  ; work         ;
+;       |qpsk_MOD:qpsk_MOD_U3|                       ; 4 (4)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3                                                                                                                  ; qpsk_MOD              ; work         ;
 +----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -345,38 +345,15 @@ Encoding Type:  One-Hot
 +-----------------------------+------------------+----------------------+-------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                        ;
-+------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-; Register name                                                                                                                      ; Reason for Removal                                                   ;
-+------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-; WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3|I_comp[15]                                                                         ; Stuck at GND due to stuck port clock_enable                          ;
-; WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3|Q_comp[15]                                                                         ; Stuck at GND due to stuck port clock_enable                          ;
-; WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3|valid_counter                                                                      ; Lost fanout                                                          ;
-; WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3|bit_count                                                                          ; Stuck at VCC due to stuck port clock_enable                          ;
-; WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3|b0                                                                                 ; Stuck at GND due to stuck port clock_enable                          ;
-; mod_out_error_count[0]                                                                                                             ; Stuck at GND due to stuck port clock_enable                          ;
-; mod_counter[0..6]                                                                                                                  ; Stuck at GND due to stuck port clock_enable                          ;
-; mod_out_error_count[1..6]                                                                                                          ; Stuck at GND due to stuck port clock_enable                          ;
-; WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0|valid_out_ff                                                                         ; Merged with WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0|ready_prbs ;
-; WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|PPBufferControl:BufferControl|state~4       ; Lost fanout                                                          ;
-; WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|PPBufferControl:BufferControl|state~5       ; Lost fanout                                                          ;
-; WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|PPBufferControl:BufferControl|state.WRITE_B ; Stuck at GND due to stuck port data_in                               ;
-; Total Number of Removed Registers = 23                                                                                             ;                                                                      ;
-+------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                       ;
-+------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------+
-; Register name                                              ; Reason for Removal             ; Registers Removed due to This Register                                              ;
-+------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------+
-; WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3|bit_count  ; Stuck at VCC                   ; WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3|b0, mod_counter[6], mod_counter[5], ;
-;                                                            ; due to stuck port clock_enable ; mod_counter[4], mod_counter[3], mod_counter[2], mod_counter[1], mod_counter[0]      ;
-; WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3|I_comp[15] ; Stuck at GND                   ; mod_out_error_count[0], mod_out_error_count[6], mod_out_error_count[5],             ;
-;                                                            ; due to stuck port clock_enable ; mod_out_error_count[4], mod_out_error_count[3], mod_out_error_count[2],             ;
-;                                                            ;                                ; mod_out_error_count[1]                                                              ;
-+------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                ;
++------------------------------------------------------------------------------------------------------------------------------+--------------------+
+; Register name                                                                                                                ; Reason for Removal ;
++------------------------------------------------------------------------------------------------------------------------------+--------------------+
+; WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|PPBufferControl:BufferControl|state~4 ; Lost fanout        ;
+; WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|PPBufferControl:BufferControl|state~5 ; Lost fanout        ;
+; Total Number of Removed Registers = 2                                                                                        ;                    ;
++------------------------------------------------------------------------------------------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -384,62 +361,63 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 192   ;
+; Total registers                              ; 211   ;
 ; Number of registers using Synchronous Clear  ; 88    ;
 ; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 190   ;
+; Number of registers using Asynchronous Clear ; 211   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 165   ;
+; Number of registers using Clock Enable       ; 182   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; randomizer_out_counter[6]               ; 3       ;
-; randomizer_out_counter[4]               ; 5       ;
-; randomizer_out_counter[2]               ; 5       ;
-; randomizer_out_counter[3]               ; 5       ;
-; randomizer_out_counter[1]               ; 5       ;
-; randomizer_out_counter[0]               ; 5       ;
-; FEC_counter[7]                          ; 3       ;
-; FEC_counter[0]                          ; 5       ;
-; FEC_counter[1]                          ; 5       ;
-; FEC_counter[2]                          ; 5       ;
-; FEC_counter[3]                          ; 5       ;
-; FEC_counter[4]                          ; 5       ;
-; FEC_counter[5]                          ; 5       ;
-; interleaver_counter[7]                  ; 3       ;
-; interleaver_counter[0]                  ; 5       ;
-; interleaver_counter[1]                  ; 5       ;
-; interleaver_counter[2]                  ; 5       ;
-; interleaver_counter[3]                  ; 5       ;
-; interleaver_counter[4]                  ; 5       ;
-; interleaver_counter[5]                  ; 5       ;
-; randomizer_in_counter[6]                ; 3       ;
-; randomizer_in_counter[1]                ; 5       ;
-; randomizer_in_counter[0]                ; 6       ;
-; randomizer_in_counter[4]                ; 5       ;
-; randomizer_in_counter[3]                ; 6       ;
-; randomizer_in_counter[2]                ; 5       ;
-; Total number of inverted registers = 26 ;         ;
-+-----------------------------------------+---------+
++---------------------------------------------------------------------+
+; Inverted Register Statistics                                        ;
++-----------------------------------------------------------+---------+
+; Inverted Register                                         ; Fan out ;
++-----------------------------------------------------------+---------+
+; randomizer_out_counter[6]                                 ; 3       ;
+; randomizer_out_counter[4]                                 ; 5       ;
+; randomizer_out_counter[2]                                 ; 5       ;
+; randomizer_out_counter[3]                                 ; 5       ;
+; randomizer_out_counter[1]                                 ; 5       ;
+; randomizer_out_counter[0]                                 ; 5       ;
+; FEC_counter[7]                                            ; 3       ;
+; FEC_counter[0]                                            ; 5       ;
+; FEC_counter[1]                                            ; 5       ;
+; FEC_counter[2]                                            ; 5       ;
+; FEC_counter[3]                                            ; 5       ;
+; FEC_counter[4]                                            ; 5       ;
+; FEC_counter[5]                                            ; 5       ;
+; interleaver_counter[7]                                    ; 3       ;
+; interleaver_counter[0]                                    ; 5       ;
+; interleaver_counter[1]                                    ; 5       ;
+; interleaver_counter[2]                                    ; 5       ;
+; interleaver_counter[3]                                    ; 5       ;
+; interleaver_counter[4]                                    ; 5       ;
+; interleaver_counter[5]                                    ; 5       ;
+; WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3|bit_count ; 4       ;
+; randomizer_in_counter[6]                                  ; 3       ;
+; randomizer_in_counter[1]                                  ; 5       ;
+; randomizer_in_counter[0]                                  ; 5       ;
+; randomizer_in_counter[4]                                  ; 5       ;
+; randomizer_in_counter[3]                                  ; 5       ;
+; randomizer_in_counter[2]                                  ; 5       ;
+; Total number of inverted registers = 27                   ;         ;
++-----------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0|r_reg[13]                           ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0|r_reg[9]                            ;
-; 10:1               ; 32 bits   ; 192 LEs       ; 0 LEs                ; 192 LEs                ; Yes        ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|counter_input[19] ;
-; 11:1               ; 32 bits   ; 224 LEs       ; 0 LEs                ; 224 LEs                ; Yes        ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|counter_output[4] ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|input_state       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0|r_reg[15]                            ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0|r_reg[14]                            ;
+; 10:1               ; 32 bits   ; 192 LEs       ; 0 LEs                ; 192 LEs                ; Yes        ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|counter_input[0]   ;
+; 11:1               ; 32 bits   ; 224 LEs       ; 0 LEs                ; 224 LEs                ; Yes        ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|counter_output[16] ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|input_state        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1002,35 +980,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 192                         ;
-;     CLR               ; 17                          ;
+; arriav_ff             ; 211                         ;
+;     CLR               ; 21                          ;
 ;     CLR SCLR          ; 8                           ;
-;     ENA CLR           ; 77                          ;
+;     ENA CLR           ; 94                          ;
 ;     ENA CLR SCLR      ; 80                          ;
 ;     ENA CLR SLD       ; 8                           ;
-;     plain             ; 2                           ;
-; arriav_lcell_comb     ; 403                         ;
-;     arith             ; 182                         ;
-;         1 data inputs ; 173                         ;
-;         2 data inputs ; 4                           ;
+; arriav_lcell_comb     ; 437                         ;
+;     arith             ; 195                         ;
+;         1 data inputs ; 185                         ;
+;         2 data inputs ; 5                           ;
 ;         3 data inputs ; 4                           ;
 ;         4 data inputs ; 1                           ;
 ;     extend            ; 3                           ;
 ;         7 data inputs ; 3                           ;
-;     normal            ; 218                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 29                          ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 14                          ;
-;         4 data inputs ; 24                          ;
-;         5 data inputs ; 44                          ;
-;         6 data inputs ; 92                          ;
+;     normal            ; 239                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 31                          ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 20                          ;
+;         4 data inputs ; 23                          ;
+;         5 data inputs ; 42                          ;
+;         6 data inputs ; 105                         ;
 ; boundary_port         ; 8                           ;
 ; generic_pll           ; 2                           ;
 ; stratixv_ram_block    ; 3                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.90                        ;
-; Average LUT depth     ; 3.31                        ;
+; Average LUT depth     ; 3.22                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1049,7 +1026,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Wed Dec  4 15:18:55 2024
+    Info: Processing started: Thu Dec  5 00:23:32 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off WiMAX_veriPHY -c WiMAX_veriPHY
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -1082,15 +1059,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file /study/
 Info (12021): Found 1 design units, including 1 entities, in source file /study/fall2024/ecng 4104/project/phase3/ip/fec_dpr.v
     Info (12023): Found entity 1: FEC_DPR File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/ip/FEC_DPR.v Line: 40
 Info (12127): Elaborating entity "WiMAX_PHY_top_verify" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at WiMAX_PHY_top_verify.sv(109): truncated value with size 32 to match size of target (7) File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 109
-Warning (10230): Verilog HDL assignment warning at WiMAX_PHY_top_verify.sv(125): truncated value with size 32 to match size of target (7) File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 125
-Warning (10230): Verilog HDL assignment warning at WiMAX_PHY_top_verify.sv(131): truncated value with size 32 to match size of target (7) File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 131
-Warning (10230): Verilog HDL assignment warning at WiMAX_PHY_top_verify.sv(148): truncated value with size 32 to match size of target (8) File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 148
-Warning (10230): Verilog HDL assignment warning at WiMAX_PHY_top_verify.sv(154): truncated value with size 32 to match size of target (8) File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 154
-Warning (10230): Verilog HDL assignment warning at WiMAX_PHY_top_verify.sv(171): truncated value with size 32 to match size of target (8) File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 171
-Warning (10230): Verilog HDL assignment warning at WiMAX_PHY_top_verify.sv(177): truncated value with size 32 to match size of target (8) File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 177
-Warning (10230): Verilog HDL assignment warning at WiMAX_PHY_top_verify.sv(195): truncated value with size 32 to match size of target (7) File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 195
-Warning (10230): Verilog HDL assignment warning at WiMAX_PHY_top_verify.sv(201): truncated value with size 32 to match size of target (7) File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 201
 Info (12128): Elaborating entity "WiMAX_PHY_top" for hierarchy "WiMAX_PHY_top:WiMAX_PHY_U0" File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 95
 Info (12128): Elaborating entity "PLL_50_100" for hierarchy "WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst" File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top.sv Line: 67
 Info (12128): Elaborating entity "PLL_50_100_0002" for hierarchy "WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst|PLL_50_100_0002:pll_50_100_inst" File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/ip/PLL_50_100.v Line: 22
@@ -1229,22 +1197,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_b432 File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/syn/db/altsyncram_b432.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_b432" for hierarchy "WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component|altsyncram_b432:auto_generated" File: c:/intelfpga_lite/22.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "qpsk_MOD" for hierarchy "WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3" File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top.sv Line: 126
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "modulator_pass" is stuck at VCC File: D:/Study/FALL2024/ECNG 4104/Project/Phase3/rtl/WiMAX_PHY_top_verify.sv Line: 15
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/Study/FALL2024/ECNG 4104/Project/Phase3/syn/output_files/WiMAX_veriPHY.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 6 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 426 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 463 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 413 logic cells
+    Info (21061): Implemented 450 logic cells
     Info (21064): Implemented 3 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4880 megabytes
-    Info: Processing ended: Wed Dec  4 15:19:04 2024
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4879 megabytes
+    Info: Processing ended: Thu Dec  5 00:23:41 2024
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:11
 
