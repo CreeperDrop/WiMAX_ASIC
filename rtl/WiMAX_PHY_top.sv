@@ -12,7 +12,9 @@ module WiMAX_PHY_top(
     output logic        ready_out,      // ready from TB to modulator
     output logic        valid_out,      // Valid out to TB
 
-    output logic        pll_locked,
+    output logic        clk_50,         // 50 MHz clock
+    output logic        clk_100,        // 100 MHz clock
+    output logic        locked,
     output logic        prbs_out,
     output logic        prbs_valid,
     output logic        fec_out,
@@ -26,9 +28,9 @@ module WiMAX_PHY_top(
 );
 
 // PLL Wires
-logic clk_50;
-logic clk_100;
-logic locked;
+// logic clk_50;
+// logic clk_100;
+// logic locked;
 
 logic ready_fec;
 logic valid_fec;
