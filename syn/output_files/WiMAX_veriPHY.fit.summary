@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Dec  5 00:24:44 2024
+Fitter Status : Successful - Sun Dec  8 12:47:47 2024
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : WiMAX_veriPHY
 Top-level Entity Name : WiMAX_PHY_top_verify
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 259 / 18,480 ( 1 % )
-Total registers : 249
+Logic utilization (in ALMs) : 258 / 18,480 ( 1 % )
+Total registers : 250
 Total pins : 8 / 224 ( 4 % )
 Total virtual pins : 0
 Total block memory bits : 704 / 3,153,920 ( < 1 % )

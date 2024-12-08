@@ -1,3 +1,9 @@
+// File: interleaver_top.sv
+// Desc  : Interleaver top instantiation module. It instantiates the interleaver and ping pong buffer modules. 
+// Author: Ahmed Fayez Elsousy
+// Date  : 20/11/2024
+// History: Final Release
+
 module interleaver_top #(
     parameter Ncbps = 192,   // Coded Bits Per Second
     parameter Ncpc  = 2,     // Coded bits per carrier = 2 (QPSK)

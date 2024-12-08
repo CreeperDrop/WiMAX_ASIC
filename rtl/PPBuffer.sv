@@ -1,3 +1,9 @@
+// File: PPBuffer.sv
+// Desc  : Ping Poing buffer top module. It instantiates the control module and two DPR banks.
+// Author: Ahmed Fayez Elsousy
+// Date  : 20/11/2024
+// History: Final Release
+
 module PPBuffer (
     input  logic       clk,
     input  logic       resetN, 

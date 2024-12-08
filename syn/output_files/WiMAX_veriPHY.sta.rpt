@@ -1,5 +1,5 @@
 Timing Analyzer report for WiMAX_veriPHY
-Wed Dec  4 14:49:00 2024
+Sun Dec  8 12:47:57 2024
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -9,46 +9,55 @@ Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
   1. Legal Notice
   2. Timing Analyzer Summary
   3. Parallel Compilation
-  4. Clocks
-  5. Slow 1100mV 85C Model Fmax Summary
-  6. Timing Closure Recommendations
-  7. Slow 1100mV 85C Model Setup Summary
-  8. Slow 1100mV 85C Model Hold Summary
-  9. Slow 1100mV 85C Model Recovery Summary
- 10. Slow 1100mV 85C Model Removal Summary
- 11. Slow 1100mV 85C Model Minimum Pulse Width Summary
- 12. Slow 1100mV 85C Model Metastability Summary
- 13. Slow 1100mV 0C Model Fmax Summary
- 14. Slow 1100mV 0C Model Setup Summary
- 15. Slow 1100mV 0C Model Hold Summary
- 16. Slow 1100mV 0C Model Recovery Summary
- 17. Slow 1100mV 0C Model Removal Summary
- 18. Slow 1100mV 0C Model Minimum Pulse Width Summary
- 19. Slow 1100mV 0C Model Metastability Summary
- 20. Fast 1100mV 85C Model Setup Summary
- 21. Fast 1100mV 85C Model Hold Summary
- 22. Fast 1100mV 85C Model Recovery Summary
- 23. Fast 1100mV 85C Model Removal Summary
- 24. Fast 1100mV 85C Model Minimum Pulse Width Summary
- 25. Fast 1100mV 85C Model Metastability Summary
- 26. Fast 1100mV 0C Model Setup Summary
- 27. Fast 1100mV 0C Model Hold Summary
- 28. Fast 1100mV 0C Model Recovery Summary
- 29. Fast 1100mV 0C Model Removal Summary
- 30. Fast 1100mV 0C Model Minimum Pulse Width Summary
- 31. Fast 1100mV 0C Model Metastability Summary
- 32. Multicorner Timing Analysis Summary
- 33. Board Trace Model Assignments
- 34. Input Transition Times
- 35. Signal Integrity Metrics (Slow 1100mv 0c Model)
- 36. Signal Integrity Metrics (Slow 1100mv 85c Model)
- 37. Signal Integrity Metrics (Fast 1100mv 0c Model)
- 38. Signal Integrity Metrics (Fast 1100mv 85c Model)
- 39. Clock Transfers
- 40. Report TCCS
- 41. Report RSKM
- 42. Unconstrained Paths Summary
- 43. Timing Analyzer Messages
+  4. SDC File List
+  5. Clocks
+  6. Slow 1100mV 85C Model Fmax Summary
+  7. Timing Closure Recommendations
+  8. Slow 1100mV 85C Model Setup Summary
+  9. Slow 1100mV 85C Model Hold Summary
+ 10. Slow 1100mV 85C Model Recovery Summary
+ 11. Slow 1100mV 85C Model Removal Summary
+ 12. Slow 1100mV 85C Model Minimum Pulse Width Summary
+ 13. Slow 1100mV 85C Model Metastability Summary
+ 14. Slow 1100mV 0C Model Fmax Summary
+ 15. Slow 1100mV 0C Model Setup Summary
+ 16. Slow 1100mV 0C Model Hold Summary
+ 17. Slow 1100mV 0C Model Recovery Summary
+ 18. Slow 1100mV 0C Model Removal Summary
+ 19. Slow 1100mV 0C Model Minimum Pulse Width Summary
+ 20. Slow 1100mV 0C Model Metastability Summary
+ 21. Fast 1100mV 85C Model Setup Summary
+ 22. Fast 1100mV 85C Model Hold Summary
+ 23. Fast 1100mV 85C Model Recovery Summary
+ 24. Fast 1100mV 85C Model Removal Summary
+ 25. Fast 1100mV 85C Model Minimum Pulse Width Summary
+ 26. Fast 1100mV 85C Model Metastability Summary
+ 27. Fast 1100mV 0C Model Setup Summary
+ 28. Fast 1100mV 0C Model Hold Summary
+ 29. Fast 1100mV 0C Model Recovery Summary
+ 30. Fast 1100mV 0C Model Removal Summary
+ 31. Fast 1100mV 0C Model Minimum Pulse Width Summary
+ 32. Fast 1100mV 0C Model Metastability Summary
+ 33. Multicorner Timing Analysis Summary
+ 34. Board Trace Model Assignments
+ 35. Input Transition Times
+ 36. Signal Integrity Metrics (Slow 1100mv 0c Model)
+ 37. Signal Integrity Metrics (Slow 1100mv 85c Model)
+ 38. Signal Integrity Metrics (Fast 1100mv 0c Model)
+ 39. Signal Integrity Metrics (Fast 1100mv 85c Model)
+ 40. Setup Transfers
+ 41. Hold Transfers
+ 42. Recovery Transfers
+ 43. Removal Transfers
+ 44. Report TCCS
+ 45. Report RSKM
+ 46. Unconstrained Paths Summary
+ 47. Clock Status Summary
+ 48. Unconstrained Input Ports
+ 49. Unconstrained Output Ports
+ 50. Unconstrained Input Ports
+ 51. Unconstrained Output Ports
+ 52. Timing Analyzer Messages
 
 
 
@@ -94,25 +103,49 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.22        ;
 ; Maximum used               ; 6           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-6         ;   0.2%      ;
+;     Processor 2            ;   4.7%      ;
+;     Processor 3            ;   4.6%      ;
+;     Processor 4            ;   4.5%      ;
+;     Processor 5            ;   4.3%      ;
+;     Processor 6            ;   4.3%      ;
 +----------------------------+-------------+
 
 
-----------
-; Clocks ;
-----------
-No clocks to report.
++----------------------------------------------------------------------+
+; SDC File List                                                        ;
++----------------------------------+--------+--------------------------+
+; SDC File Path                    ; Status ; Read at                  ;
++----------------------------------+--------+--------------------------+
+; ../cons/WiMAX_PHY_top_verify.sdc ; OK     ; Sun Dec  8 12:47:53 2024 ;
++----------------------------------+--------+--------------------------+
 
 
---------------------------------------
-; Slow 1100mV 85C Model Fmax Summary ;
---------------------------------------
-No paths to report.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++----------------------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+; Clock Name                                                                                   ; Type      ; Period ; Frequency  ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master                                                                                     ; Source                                                                                          ; Targets                                                                                          ;
++----------------------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+; clk_ref                                                                                      ; Base      ; 20.000 ; 50.0 MHz   ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;                                                                                            ;                                                                                                 ; { clk_ref }                                                                                      ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; Generated ; 3.333  ; 300.03 MHz ; 0.000 ; 1.666  ; 50.00      ; 2         ; 12          ;       ;        ;           ;            ; false    ; clk_ref                                                                                    ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin      ; { WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] }   ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; 20.000 ; 50.0 MHz   ; 0.000 ; 10.000 ; 50.00      ; 6         ; 1           ;       ;        ;           ;            ; false    ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ; { WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk } ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; 10.000 ; 100.0 MHz  ; 0.000 ; 5.000  ; 50.00      ; 3         ; 1           ;       ;        ;           ;            ; false    ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|vco0ph[0] ; { WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk } ;
++----------------------------------------------------------------------------------------------+-----------+--------+------------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                                                                 ;
++------------+-----------------+----------------------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                                   ; Note ;
++------------+-----------------+----------------------------------------------------------------------------------------------+------+
+; 106.09 MHz ; 106.09 MHz      ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 179.69 MHz ; 179.69 MHz      ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
++------------+-----------------+----------------------------------------------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
 ----------------------------------
@@ -121,34 +154,54 @@ No paths to report.
 HTML report is unavailable in plain text report export.
 
 
----------------------------------------
-; Slow 1100mV 85C Model Setup Summary ;
----------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Setup Summary                                                                                  ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 4.103 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 4.543 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
---------------------------------------
-; Slow 1100mV 85C Model Hold Summary ;
---------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                                                                                   ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.286 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.438 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
-------------------------------------------
-; Slow 1100mV 85C Model Recovery Summary ;
-------------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Recovery Summary                                                                               ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 7.195 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
------------------------------------------
-; Slow 1100mV 85C Model Removal Summary ;
------------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Removal Summary                                                                                ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 1.112 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
------------------------------------------------------
-; Slow 1100mV 85C Model Minimum Pulse Width Summary ;
------------------------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Minimum Pulse Width Summary                                                                    ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 3.633 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.641 ; 0.000         ;
+; clk_ref                                                                                      ; 9.949 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
 -----------------------------------------------
@@ -157,40 +210,65 @@ No paths to report.
 No synchronizer chains to report.
 
 
--------------------------------------
-; Slow 1100mV 0C Model Fmax Summary ;
--------------------------------------
-No paths to report.
++------------------------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                                                                  ;
++------------+-----------------+----------------------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                                   ; Note ;
++------------+-----------------+----------------------------------------------------------------------------------------------+------+
+; 107.57 MHz ; 107.57 MHz      ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 179.24 MHz ; 179.24 MHz      ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
++------------+-----------------+----------------------------------------------------------------------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
---------------------------------------
-; Slow 1100mV 0C Model Setup Summary ;
---------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Setup Summary                                                                                   ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 4.186 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 4.602 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
--------------------------------------
-; Slow 1100mV 0C Model Hold Summary ;
--------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                                                                                    ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.268 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.439 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
------------------------------------------
-; Slow 1100mV 0C Model Recovery Summary ;
------------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Recovery Summary                                                                                ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 7.257 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
-----------------------------------------
-; Slow 1100mV 0C Model Removal Summary ;
-----------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Removal Summary                                                                                 ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 1.056 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
-----------------------------------------------------
-; Slow 1100mV 0C Model Minimum Pulse Width Summary ;
-----------------------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Minimum Pulse Width Summary                                                                     ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 3.558 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.574 ; 0.000         ;
+; clk_ref                                                                                      ; 9.980 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
 ----------------------------------------------
@@ -199,34 +277,54 @@ No paths to report.
 No synchronizer chains to report.
 
 
----------------------------------------
-; Fast 1100mV 85C Model Setup Summary ;
----------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Setup Summary                                                                                  ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 6.866 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 7.069 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
---------------------------------------
-; Fast 1100mV 85C Model Hold Summary ;
---------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                                                                                   ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.159 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.179 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
-------------------------------------------
-; Fast 1100mV 85C Model Recovery Summary ;
-------------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Recovery Summary                                                                               ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.465 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
------------------------------------------
-; Fast 1100mV 85C Model Removal Summary ;
------------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Removal Summary                                                                                ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.526 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
------------------------------------------------------
-; Fast 1100mV 85C Model Minimum Pulse Width Summary ;
------------------------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Minimum Pulse Width Summary                                                                    ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 3.889 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.899 ; 0.000         ;
+; clk_ref                                                                                      ; 9.643 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
 -----------------------------------------------
@@ -235,34 +333,54 @@ No paths to report.
 No synchronizer chains to report.
 
 
---------------------------------------
-; Fast 1100mV 0C Model Setup Summary ;
---------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Setup Summary                                                                                   ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 7.083 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 7.330 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
--------------------------------------
-; Fast 1100mV 0C Model Hold Summary ;
--------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                                                                                    ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.149 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.170 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
------------------------------------------
-; Fast 1100mV 0C Model Recovery Summary ;
------------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Recovery Summary                                                                                ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.631 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
-----------------------------------------
-; Fast 1100mV 0C Model Removal Summary ;
-----------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Removal Summary                                                                                 ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.477 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
-----------------------------------------------------
-; Fast 1100mV 0C Model Minimum Pulse Width Summary ;
-----------------------------------------------------
-No paths to report.
++----------------------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Minimum Pulse Width Summary                                                                     ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; Clock                                                                                        ; Slack ; End Point TNS ;
++----------------------------------------------------------------------------------------------+-------+---------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 3.887 ; 0.000         ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 8.897 ; 0.000         ;
+; clk_ref                                                                                      ; 9.632 ; 0.000         ;
++----------------------------------------------------------------------------------------------+-------+---------------+
 
 
 ----------------------------------------------
@@ -271,14 +389,22 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+----------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                        ;
-+------------------+-------+------+----------+---------+---------------------+
-; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+-------+------+----------+---------+---------------------+
-; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
-; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
-+------------------+-------+------+----------+---------+---------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                                                                      ;
++-----------------------------------------------------------------------------------------------+-------+-------+----------+---------+---------------------+
+; Clock                                                                                         ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++-----------------------------------------------------------------------------------------------+-------+-------+----------+---------+---------------------+
+; Worst-case Slack                                                                              ; 4.103 ; 0.149 ; 7.195    ; 0.477   ; 1.666               ;
+;  WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A   ; N/A   ; N/A      ; N/A     ; 1.666               ;
+;  WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 4.543 ; 0.149 ; N/A      ; N/A     ; 8.574               ;
+;  WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 4.103 ; 0.170 ; 7.195    ; 0.477   ; 3.558               ;
+;  clk_ref                                                                                      ; N/A   ; N/A   ; N/A      ; N/A     ; 9.632               ;
+; Design-wide TNS                                                                               ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A   ; N/A   ; N/A      ; N/A     ; 0.000               ;
+;  WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.000 ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
+;  clk_ref                                                                                      ; N/A   ; N/A   ; N/A      ; N/A     ; 0.000               ;
++-----------------------------------------------------------------------------------------------+-------+-------+----------+---------+---------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -299,9 +425,9 @@ No synchronizer chains to report.
 ; Pin     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +---------+--------------+-----------------+-----------------+
 ; reset_N ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; clk_ref ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; en      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; load    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; en      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk_ref ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 +---------+--------------+-----------------+-----------------+
 
 
@@ -353,10 +479,50 @@ No synchronizer chains to report.
 +------------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
--------------------
-; Clock Transfers ;
--------------------
-Nothing to report.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                                                                                                                         ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                                   ; To Clock                                                                                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 46368    ; 0        ; 0        ; 0        ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 516      ; 0        ; 0        ; 0        ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 456      ; 0        ; 0        ; 0        ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 1163     ; 0        ; 0        ; 0        ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                                                                                                                          ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                                   ; To Clock                                                                                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 46368    ; 0        ; 0        ; 0        ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 516      ; 0        ; 0        ; 0        ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 456      ; 0        ; 0        ; 0        ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 1163     ; 0        ; 0        ; 0        ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery Transfers                                                                                                                                                                                                                      ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                                   ; To Clock                                                                                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 19       ; 0        ; 0        ; 0        ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removal Transfers                                                                                                                                                                                                                       ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                                                                   ; To Clock                                                                                     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; 19       ; 0        ; 0        ; 0        ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
 ---------------
@@ -378,11 +544,69 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 0     ; 0    ;
-; Unconstrained Input Port Paths  ; 0     ; 0    ;
-; Unconstrained Output Ports      ; 0     ; 0    ;
-; Unconstrained Output Port Paths ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 3     ; 3    ;
+; Unconstrained Input Port Paths  ; 297   ; 297  ;
+; Unconstrained Output Ports      ; 4     ; 4    ;
+; Unconstrained Output Port Paths ; 34    ; 34   ;
 +---------------------------------+-------+------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                                                                                                                                  ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-----------+-------------+
+; Target                                                                                       ; Clock                                                                                        ; Type      ; Status      ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-----------+-------------+
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; Generated ; Constrained ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; Constrained ;
+; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk ; Generated ; Constrained ;
+; clk_ref                                                                                      ; clk_ref                                                                                      ; Base      ; Constrained ;
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+-----------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; en         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; load       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset_N    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; Output Port      ; Comment                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; fec_pass         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; interleaver_pass ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; modulator_pass   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; prbs_pass        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; en         ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; load       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset_N    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; Output Port      ; Comment                                                                               ;
++------------------+---------------------------------------------------------------------------------------+
+; fec_pass         ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; interleaver_pass ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; modulator_pass   ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; prbs_pass        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------------+---------------------------------------------------------------------------------------+
 
 
 +--------------------------+
@@ -391,69 +615,158 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Wed Dec  4 14:48:56 2024
+    Info: Processing started: Sun Dec  8 12:47:52 2024
 Info: Command: quartus_sta WiMAX_veriPHY -c WiMAX_veriPHY
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Critical Warning (332012): Synopsys Design Constraints File file not found: 'WiMAX_veriPHY.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
+Info (332104): Reading SDC File: '../cons/WiMAX_PHY_top_verify.sdc'
+Info (332110): Deriving PLL clocks
+    Info (332110): create_generated_clock -source {WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|refclkin} -divide_by 2 -multiply_by 12 -duty_cycle 50.00 -name {WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]} {WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]}
+    Info (332110): create_generated_clock -source {WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 6 -duty_cycle 50.00 -name {WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk} {WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk}
+    Info (332110): create_generated_clock -source {WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 3 -duty_cycle 50.00 -name {WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk} {WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk}
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
-Info (332159): No clocks to report
 Info: Analyzing Slow 1100mV 85C Model
-Info (332140): No fmax paths to report
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332146): Worst-case setup slack is 4.103
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     4.103               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     4.543               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.286
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.286               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.438               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case recovery slack is 7.195
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     7.195               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 1.112
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.112               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case minimum pulse width slack is 1.666
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.666               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     3.633               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.641               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.949               0.000 clk_ref 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
-Info (332140): No fmax paths to report
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332146): Worst-case setup slack is 4.186
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     4.186               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     4.602               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.268
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.268               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.439               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case recovery slack is 7.257
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     7.257               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 1.056
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.056               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case minimum pulse width slack is 1.666
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.666               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     3.558               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.574               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.980               0.000 clk_ref 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332146): Worst-case setup slack is 6.866
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     6.866               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     7.069               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.159
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.159               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.179               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case recovery slack is 8.465
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     8.465               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 0.526
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.526               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case minimum pulse width slack is 1.666
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.666               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     3.889               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.899               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.643               0.000 clk_ref 
 Info: Analyzing Fast 1100mV 0C Model
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
-Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
-Info (332101): Design is fully constrained for setup requirements
-Info (332101): Design is fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5084 megabytes
-    Info: Processing ended: Wed Dec  4 14:49:00 2024
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  from: refclkin  to: fbclk
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
+    Info (332098): Cell: WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332146): Worst-case setup slack is 7.083
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     7.083               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     7.330               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case hold slack is 0.149
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.149               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.170               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case recovery slack is 8.631
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     8.631               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case removal slack is 0.477
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.477               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+Info (332146): Worst-case minimum pulse width slack is 1.666
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.666               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
+    Info (332119):     3.887               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.897               0.000 WiMAX_PHY_U0|PLL_inst|pll_50_100_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     9.632               0.000 clk_ref 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 5163 megabytes
+    Info: Processing ended: Sun Dec  8 12:47:57 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

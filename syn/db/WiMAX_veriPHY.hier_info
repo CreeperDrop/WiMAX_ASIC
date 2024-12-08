@@ -6,7 +6,7 @@ en => en.IN1
 prbs_pass <= prbs_pass.DB_MAX_OUTPUT_PORT_TYPE
 fec_pass <= fec_pass.DB_MAX_OUTPUT_PORT_TYPE
 interleaver_pass <= interleaver_pass.DB_MAX_OUTPUT_PORT_TYPE
-modulator_pass <= Equal8.DB_MAX_OUTPUT_PORT_TYPE
+modulator_pass <= modulator_pass.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0
@@ -888,6 +888,7 @@ wren_a => ram_block1a0.ENA0
 
 |WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3
 Reset_N => ready_out.IN0
+Reset_N => valid_out~reg0.ACLR
 Reset_N => Q_comp[0]~reg0.ACLR
 Reset_N => Q_comp[1]~reg0.ACLR
 Reset_N => Q_comp[2]~reg0.ACLR
@@ -920,9 +921,9 @@ Reset_N => I_comp[12]~reg0.ACLR
 Reset_N => I_comp[13]~reg0.ACLR
 Reset_N => I_comp[14]~reg0.ACLR
 Reset_N => I_comp[15]~reg0.ACLR
-Reset_N => valid_counter.ACLR
 Reset_N => b0.ACLR
 Reset_N => bit_count.PRESET
+clk_100 => valid_out~reg0.CLK
 clk_100 => Q_comp[0]~reg0.CLK
 clk_100 => Q_comp[1]~reg0.CLK
 clk_100 => Q_comp[2]~reg0.CLK
@@ -955,17 +956,14 @@ clk_100 => I_comp[12]~reg0.CLK
 clk_100 => I_comp[13]~reg0.CLK
 clk_100 => I_comp[14]~reg0.CLK
 clk_100 => I_comp[15]~reg0.CLK
-clk_100 => valid_counter.CLK
 clk_100 => b0.CLK
 clk_100 => bit_count.CLK
 valid_in => always1.IN0
-valid_in => valid_out.IN1
-valid_in => valid_counter.DATAIN
 ready_in => always1.IN1
 ready_in => ready_out.IN1
 data_in => b0.DATAB
 data_in => Decoder0.IN0
-valid_out <= valid_out.DB_MAX_OUTPUT_PORT_TYPE
+valid_out <= valid_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ready_out <= ready_out.DB_MAX_OUTPUT_PORT_TYPE
 I_comp[0] <= I_comp[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 I_comp[1] <= I_comp[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE

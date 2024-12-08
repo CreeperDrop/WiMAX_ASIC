@@ -1,3 +1,10 @@
+// File: prbs.sv
+// Desc  : PRBS module that generates a pseudo random output to 
+//         begin the WiMAX encoding operation
+// Author: ASIC TEAM 1
+// Date  : 2/12/2024
+// History: Final Release (2nd edition)
+
 import Package_wimax::*;
 
 module prbs(
@@ -64,8 +71,6 @@ module prbs(
         lfsrXOR = r_reg[15] ^ r_reg[14];
         // Next state logic
         r_next = {lfsrXOR, r_reg[1:14]};
-
-        // Output logic
     end
 
 endmodule

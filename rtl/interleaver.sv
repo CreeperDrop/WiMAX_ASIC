@@ -1,3 +1,9 @@
+// File: interleaver.sv
+// Desc  : Interleaver core module. It takes in 192 bits serially and produces an interleaved output.
+// Author: Ahmed Fayez Elsousy
+// Date  : 20/11/2024
+// History: Final Release
+
 module interleaver #(
     parameter Ncbps = 192,   // Coded Bits Per Second
     parameter Ncpc  = 2,     // Coded bits per carrier = 2 (QPSK)

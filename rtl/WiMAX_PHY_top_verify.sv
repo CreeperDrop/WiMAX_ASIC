@@ -1,3 +1,11 @@
+// File: WiMAX_PHY_top_verify.sv
+// Desc  : Top module that encompasses all the modules and verifies
+//         their output with hardware verifier logic to be used on the FPGA
+// Author: ASIC TEAM 1
+// Date  : 8/12/2024
+// History: Final Release
+
+
 import Package_wimax::*; 
 
 module WiMAX_PHY_top_verify(
@@ -55,7 +63,6 @@ logic interleaver_data_out;
 logic interleaver_valid_out;
 logic [7:0] interleaver_counter;
 logic [7:0] interleaver_out_error_count;
-// logic interleaver_pass_flag;
 
 //Modulator signals
 
@@ -65,24 +72,23 @@ logic [15:0] mod_Q_comp;
 logic mod_valid_out;
 logic [6:0] mod_counter;
 logic [6:0] mod_out_error_count;
-// integer mod_out_error_count;
-// logic mod_pass_flag;
+
 
 
 // WiMAX_PHY_top instantiation
 
 WiMAX_PHY_top WiMAX_PHY_U0 (
-    .clk_ref(clk_ref),        // Reference (50 MHz)
-    .reset_N(reset_N),        // Reset (active low)
+    .clk_ref(clk_ref),                   // Reference (50 MHz)
+    .reset_N(reset_N),                   // Reset (active low)
     .data_in(randomizer_data_in),        // From Verify
-    .load(load),           // load for PRBS to load seed
-    .en(en),             // enable for PRBS to start working
-    .valid_in(randomizer_valid_in),       // Valid in from Verify
-    .ready_in(mod_ready_in),       // Ready in from Verify
-    .ready_out(randomizer_ready_out),      // ready from PRBS to Verify
-    .valid_out(mod_valid_out),      // Valid out to TB
-    .clk_50(clk_50),         // 50 MHz clock
-    .clk_100(clk_100),        // 100 MHz clock
+    .load(load),                         // load for PRBS to load seed
+    .en(en),                             // enable for PRBS to start working
+    .valid_in(randomizer_valid_in),      // Valid in from Verify
+    .ready_in(mod_ready_in),             // Ready in from Verify
+    .ready_out(randomizer_ready_out),    // ready from PRBS to Verify
+    .valid_out(mod_valid_out),           // Valid out to TB
+    .clk_50(clk_50),                     // 50 MHz clock
+    .clk_100(clk_100),                   // 100 MHz clock
     .locked(pll_locked),
     .prbs_out(randomizer_data_out),
     .prbs_valid(randomizer_valid_out),
@@ -140,7 +146,7 @@ always_ff @(posedge clk_50 or negedge reset_N) begin
     end
 end
 
-assign prbs_pass = ((randomizer_out_error_count == '0) && (randomizer_valid_out)) /*? 1'b1 : 1'b0*/ ;
+assign prbs_pass = ((randomizer_out_error_count == '0) && (randomizer_valid_out));
 
 // FEC output check
 
@@ -163,7 +169,7 @@ always_ff @(posedge clk_100 or negedge reset_N) begin
     end
 end
 
-assign fec_pass = ((FEC_out_error_count == '0) && (FEC_valid_out)) /*? 1'b1 : 1'b0*/ ;
+assign fec_pass = ((FEC_out_error_count == '0) && (FEC_valid_out));
 
 // Interleaver output check
 
@@ -186,12 +192,12 @@ always_ff @(posedge clk_100 or negedge reset_N) begin
     end
 end
 
-assign interleaver_pass = ((interleaver_out_error_count == '0) && (interleaver_valid_out)) /*? 1'b1 : 1'b0*/ ;
+assign interleaver_pass = ((interleaver_out_error_count == '0) && (interleaver_valid_out));
 
 
 // Modulator output check
 
-always_ff @(posedge clk_100 or negedge reset_N) begin
+always_ff @(posedge clk_50 or negedge reset_N) begin
     if (~reset_N) begin
         mod_counter <= '0;
         mod_out_error_count <= '0;
@@ -210,26 +216,7 @@ always_ff @(posedge clk_100 or negedge reset_N) begin
     end
 end
 
-assign modulator_pass = ((mod_out_error_count == '0) /*&& (mod_valid_out)*/) /*? 1'b1 : 1'b0*/ ;
-
-// WiMAX_PHY_top   wimax_U0(
-//     .clk_ref(clk_ref)       
-//     .reset_N(reset_N)    
-//     .data_in()    
-//     .load   
-//     .en         
-//     .valid_in()      
-//     .ready_in     
-//     .ready_out      
-//     .valid_out    
-//     .prbs_out
-//     .fec_out
-//     .interleaver_out
-//     .I_comp
-//     .Q_comp
-
-
-// );
+assign modulator_pass = ((mod_out_error_count == '0) && (mod_valid_out));
 
 
 endmodule

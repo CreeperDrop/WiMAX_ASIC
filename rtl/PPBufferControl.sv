@@ -1,3 +1,10 @@
+// File: PPBufferControl.sv
+// Desc  : Ping Poing buffer control module. It is FSM-based. It controls the read and write 
+//         operations of the two DPR banks and switching between them.
+// Author: Ahmed Fayez Elsousy
+// Date  : 20/11/2024
+// History: Final Release
+
 module PPBufferControl (
     input  logic clk,
     input  logic resetN,

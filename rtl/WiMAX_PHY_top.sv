@@ -1,3 +1,10 @@
+// File: WiMAX_PHY_top.sv
+// Desc  : Top module that encompasses all the modules and represents the 
+//         top module of the WiMAX PHY-layer, which also ensures streaming.
+// Author: ASIC TEAM 1
+// Date  : 8/12/2024
+// History: Final Release
+
 import Package_wimax::*; // Import the package
 
 module WiMAX_PHY_top(
@@ -27,11 +34,6 @@ module WiMAX_PHY_top(
 
 );
 
-// PLL Wires
-// logic clk_50;
-// logic clk_100;
-// logic locked;
-
 logic ready_fec;
 logic valid_fec;
 
@@ -41,19 +43,17 @@ logic valid_out_to_fec;
 logic data_out_to_fec;
 
 
-// FEC Wires (Hammad)
+// FEC Wires
 logic valid_out_fec;
 logic data_out_fec;
 
-// Interleaver Wires (FIZO)
+// Interleaver Wires
 logic valid_out_interleaver;
 logic ready_out_interleaver;
 logic data_out_interleaver;
 
-// logic data_out_index;
 
-// Modulator Wires (bolla)
-// logic valid_interleaver; // Valid input from interleaver -->
+// Modulator Wires
 logic ready_TOP_TB;      // input coming from top module test bench <--
 logic ready_interleaver; // output ready to interleaver <--
 logic valid_TOP_TB;     // output going to top module test bench -->

@@ -1,3 +1,9 @@
+// File: Package_wimax.sv
+// Desc  : Package file that contains all the constants and SELF-CHECKING tasks.
+// Author: ASIC TEAM 1
+// Date  : 8/12/2024
+// History: Final Release (2nd edition)
+
 package Package_wimax;
 
 //constants 

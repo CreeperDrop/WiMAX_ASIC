@@ -13,6 +13,12 @@ bit fec_pass;
 bit interleaver_pass;
 bit modulator_pass;
 
+// initial begin
+//     // Open the VCD file for writing
+//     $dumpfile("../netlist/dump.vcd"); 
+//     // Dump all variables
+//     $dumpvars(0, WiMAX_PHY_top_verify_tb);
+// end
 
 initial begin
     clk_ref = 1;
@@ -44,22 +50,19 @@ initial begin
     reset_N = 1;
        
     wait(dut.pll_locked == 1'b1);
-    // dut.randomizer_ready_out = 1;
-    // #(1*CLK_50_PERIOD);
+
     // Load sequence
-    load = 1; // for PRBS to load seed
+    load = 1; // for Top to load seed
     #(1*CLK_50_PERIOD);
     load = 0;
 
-    // #(1*CLK_50_PERIOD);
+    #(10*CLK_50_PERIOD);
     
     // Enable sequence
-    en = 1; // for PRBS to start working
-    // #(1*CLK_50_PERIOD);
-    // en = 0;
+    en = 1; // for Top to start working
 
     #25_000;
-    $stop();
+    $finish();
     
     
 end

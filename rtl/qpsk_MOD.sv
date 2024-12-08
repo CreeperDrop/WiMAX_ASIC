@@ -1,3 +1,9 @@
+// File: qpsk_MOD.sv
+// Desc  : Modulator core module that takes in 192 bits serially and produces a constellation map -- working on 2 bits at a time
+// Author: Hassan Mohamed
+// Date  : 6/12/2024
+// History: Final Release (2nd edition)
+
 module qpsk_MOD (
     input  logic        Reset_N, // Reset (active low)
     input  logic        clk_100, // 100 Mhz clock
@@ -15,7 +21,7 @@ module qpsk_MOD (
     // logic b0, 
     logic bit_count; // Internal signals
     logic b0; // Internal signal
-    logic valid_counter;
+    
     const logic [15:0] POS_A = 16'b0101_1010_1000_0010; // 0.707 in Q15 format
     const logic [15:0] NEG_A = 16'b1010_0101_0111_1110; // -0.707 in Q15 format
 
@@ -25,20 +31,20 @@ module qpsk_MOD (
 //            valid_out  <= 1'b0; // Modulator cannot send data when Reset is active -> valid going to TOP is 0
 //            ready_out <= 1'b0; // Modulator cannot accept data when Reset is active -> ready going to INTER is 0
             b0 <= 1'b0; 
-            valid_counter <= 1'b0;
+            
         end else begin
-            if(valid_in == 1'b1) begin
-                valid_counter <= 1'b1;
-            end else begin
-                valid_counter <= 1'b0;
-            end
-            if (ready_in == 1'b1 && valid_in == 1'b1 && valid_counter == 1'b1) begin //  once i get ready from TOP tb
+            // if(valid_in == 1'b1) begin
+            //     valid_counter <= 1'b1;
+            // end else begin
+            //     valid_counter <= 1'b0;
+            // end
+            if (ready_in == 1'b1 && valid_in == 1'b1 /*&& valid_counter == 1'b1*/) begin //  once i get ready from TOP tb
 //                ready_out <= 1'b1; // ready going out from modulator to interleaver to take in data
 
-                if (bit_count == 1'b0) begin
+                if (bit_count == 1'b1) begin
                     b0    <= data_in; // store the first bit of data in
                     bit_count <= ~bit_count; // negate bit count (make it = 1)
-                end else if (bit_count == 1'b1) begin
+                end else if (bit_count == 1'b0) begin
                     bit_count     <= ~bit_count; // make bit count 0 to take the next bit
 //                    valid_out  <= 1'b1; // to maintain that the valid output of modulator is 1 to top TB
 
@@ -52,9 +58,10 @@ module qpsk_MOD (
         if(Reset_N == 1'b0) begin
             I_comp = 16'b0;
             Q_comp = 16'b0;
+            valid_out <= 1'b0;
             //  valid_out  <= 1'b0; // Modulator cannot send data when Reset is active -> valid going to TOP is 0
             // ready_out <= 1'b0; // Modulator cannot accept data when Reset is active -> ready going to INTER is 0
-        end else if((ready_in == 1'b1) && (valid_in == 1'b1) && (bit_count == 1'b1)) begin // TB ready but  still not asserted
+        end else if((ready_in == 1'b1) && (valid_in == 1'b1) && (bit_count == 1'b0)) begin // TB ready but  still not asserted
         
                         // ready_out <= 1'b1; // Added by fayez.l
                             case ({b0,data_in})
@@ -67,7 +74,7 @@ module qpsk_MOD (
                             
                             endcase
 
-                    // valid_out <= 1'b1; // Modulator can send data to TB --> valid tb will be 1
+                    valid_out <= 1'b1; // Modulator can send data to TB --> valid tb will be 1
                     
 
                     // if( {b0,data_in} == (2'b00 || 2'b01 || 2'b10 || 2'b11) )  begin
@@ -82,6 +89,6 @@ module qpsk_MOD (
         end
         
     assign ready_out = (Reset_N && ready_in); // Modulator is always ready to take in data from interleaver
-    assign valid_out = (valid_in && ~bit_count); // Modulator can send data to TB only when it has valid data and bit count is 1
+    // assign valid_out = (valid_in && ~bit_count); // Modulator can send data to TB only when it has valid data and bit count is 1
 
 endmodule

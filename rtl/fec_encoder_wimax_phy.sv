@@ -1,10 +1,14 @@
-
+// File: fec_encoder_wimax_phy.sv
+// Desc  : Encoder core module that takes in 96 bits serially and produces 192 bits
+// Author: Hammad Omar 
+// Date  : 4/12/2024
+// History: Final Release (2nd edition)
 module fec_encoder_wimax_phy (
     input  logic clk_50,                 
     input  logic clk_100,        
     input  logic reset_N,                   //active-low reset 
     input  logic randomizer_output_valid,   //valid_in signal for data from randomizer is ready
-    input  logic ready_in,         //ready signal from interleaver indicating it can accept data
+    input  logic ready_in,                  //ready signal from interleaver indicating it can accept data
     input  logic data_in,                   //input data bit from randomizer
     output logic valid_out,                 //valid signal to interleaver indicating output data is valid
     output logic data_out,                  //output data bit after FEC encoding
