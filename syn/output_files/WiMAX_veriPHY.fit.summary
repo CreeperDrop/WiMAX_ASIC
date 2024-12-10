@@ -1,7 +1,7 @@
-Fitter Status : Successful - Sun Dec  8 12:47:47 2024
+Fitter Status : Successful - Sun Dec  8 22:15:12 2024
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : WiMAX_veriPHY
-Top-level Entity Name : WiMAX_PHY_top_verify
+Top-level Entity Name : wimax_top_wrapper
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final

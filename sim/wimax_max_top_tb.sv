@@ -1,7 +1,7 @@
 import Package_wimax::*; 
 `timescale 1ns / 1ps
 
-module WiMAX_PHY_top_verify_tb();
+module wimax_max_top_tb();
 
 bit clk_ref;
 bit reset_N;
@@ -27,7 +27,7 @@ initial begin
     end
 end
 
-WiMAX_PHY_top_verify dut (
+wimax_top_wrapper dut (
 
     .clk_ref(clk_ref),        // Reference (50 MHz)
     .reset_N(reset_N),        // Reset (active low)

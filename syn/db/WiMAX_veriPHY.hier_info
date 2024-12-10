@@ -1,15 +1,15 @@
-|WiMAX_PHY_top_verify
+|wimax_top_wrapper
 clk_ref => clk_ref.IN1
 reset_N => reset_N.IN3
 load => load.IN1
 en => en.IN1
-prbs_pass <= prbs_pass.DB_MAX_OUTPUT_PORT_TYPE
-fec_pass <= fec_pass.DB_MAX_OUTPUT_PORT_TYPE
-interleaver_pass <= interleaver_pass.DB_MAX_OUTPUT_PORT_TYPE
-modulator_pass <= modulator_pass.DB_MAX_OUTPUT_PORT_TYPE
+prbs_pass << prbs_pass.DB_MAX_OUTPUT_PORT_TYPE
+fec_pass << fec_pass.DB_MAX_OUTPUT_PORT_TYPE
+interleaver_pass << interleaver_pass.DB_MAX_OUTPUT_PORT_TYPE
+modulator_pass << modulator_pass.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0
 clk_ref => clk_ref.IN1
 reset_N => reset_N.IN4
 data_in => data_in.IN1
@@ -62,7 +62,7 @@ Q_comp[14] <= qpsk_MOD:qpsk_MOD_U3.Q_comp
 Q_comp[15] <= qpsk_MOD:qpsk_MOD_U3.Q_comp
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst
 refclk => refclk.IN1
 rst => rst.IN1
 outclk_0 <= PLL_50_100_0002:pll_50_100_inst.outclk_0
@@ -70,7 +70,7 @@ outclk_1 <= PLL_50_100_0002:pll_50_100_inst.outclk_1
 locked <= PLL_50_100_0002:pll_50_100_inst.locked
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst|PLL_50_100_0002:pll_50_100_inst
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst|PLL_50_100_0002:pll_50_100_inst
 refclk => refclk.IN1
 rst => rst.IN1
 outclk_0 <= altera_pll:altera_pll_i.outclk
@@ -78,7 +78,7 @@ outclk_1 <= altera_pll:altera_pll_i.outclk
 locked <= altera_pll:altera_pll_i.locked
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst|PLL_50_100_0002:pll_50_100_inst|altera_pll:altera_pll_i
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|PLL_50_100:PLL_inst|PLL_50_100_0002:pll_50_100_inst|altera_pll:altera_pll_i
 refclk => general[0].gpll.I_REFCLK
 refclk => general[1].gpll.I_REFCLK
 refclk1 => ~NO_FANOUT~
@@ -254,7 +254,7 @@ cascade_out[1] <= <GND>
 zdbfbclk <> <GND>
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|prbs:randomizer_U0
 data_in => data_out.IN1
 clk => data_out~reg0.CLK
 clk => counter[0].CLK
@@ -339,7 +339,7 @@ ready_prbs <= ready_prbs~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data_out <= data_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1
 clk_50 => clock.IN1
 clk_100 => output_state~1.DATAIN
 reset_N => Ping_Pong_flag.ACLR
@@ -510,7 +510,7 @@ data_out <= data_out.DB_MAX_OUTPUT_PORT_TYPE
 ready_out <= ready_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR
 address_a[0] => address_a[0].IN1
 address_a[1] => address_a[1].IN1
 address_a[2] => address_a[2].IN1
@@ -536,7 +536,7 @@ q_a[0] <= altsyncram:altsyncram_component.q_a
 q_b[0] <= altsyncram:altsyncram_component.q_b
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR|altsyncram:altsyncram_component
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR|altsyncram:altsyncram_component
 wren_a => altsyncram_6in2:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => altsyncram_6in2:auto_generated.wren_b
@@ -578,7 +578,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR|altsyncram:altsyncram_component|altsyncram_6in2:auto_generated
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|fec_encoder_wimax_phy:fec_encoder_U1|FEC_DPR:fec_encoder_DPR|altsyncram:altsyncram_component|altsyncram_6in2:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[1] => ram_block1a0.PORTAADDR1
 address_a[2] => ram_block1a0.PORTAADDR2
@@ -604,7 +604,7 @@ wren_a => ram_block1a0.PORTAWE
 wren_b => ram_block1a0.PORTBWE
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2
 clk => clk.IN2
 reset_N => reset_N.IN2
 data_in => data_in.IN1
@@ -615,7 +615,7 @@ valid_out <= PPBuffer:PingPongBuffer_inst.valid_out
 ready_out <= ready_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|interleaver:Interleaver_inst
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|interleaver:Interleaver_inst
 clk => k[0].CLK
 clk => k[1].CLK
 clk => k[2].CLK
@@ -648,7 +648,7 @@ ready_interleaver <= <VCC>
 valid_interleaver <= always2.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst
 clk => clk.IN3
 resetN => resetN.IN1
 wraddress[0] => wraddress[0].IN2
@@ -675,7 +675,7 @@ valid_out <= PPBufferControl:BufferControl.valid_out
 ready_out <= PPBufferControl:BufferControl.ready_out
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|PPBufferControl:BufferControl
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|PPBufferControl:BufferControl
 clk => clear_counter.CLK
 clk => valid_out~reg0.CLK
 clk => bit_counter[0].CLK
@@ -702,7 +702,7 @@ valid_out <= valid_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
 q <= q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA
 clock => clock.IN1
 data[0] => data[0].IN1
 rdaddress[0] => rdaddress[0].IN1
@@ -726,7 +726,7 @@ wren => wren.IN1
 q[0] <= altsyncram:altsyncram_component.q_b
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component
 wren_a => altsyncram_b432:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -768,7 +768,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component|altsyncram_b432:auto_generated
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankA|altsyncram:altsyncram_component|altsyncram_b432:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[1] => ram_block1a0.PORTAADDR1
 address_a[2] => ram_block1a0.PORTAADDR2
@@ -794,7 +794,7 @@ wren_a => ram_block1a0.PORTAWE
 wren_a => ram_block1a0.ENA0
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB
 clock => clock.IN1
 data[0] => data[0].IN1
 rdaddress[0] => rdaddress[0].IN1
@@ -818,7 +818,7 @@ wren => wren.IN1
 q[0] <= altsyncram:altsyncram_component.q_b
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB|altsyncram:altsyncram_component
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB|altsyncram:altsyncram_component
 wren_a => altsyncram_b432:auto_generated.wren_a
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -860,7 +860,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB|altsyncram:altsyncram_component|altsyncram_b432:auto_generated
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|interleaver_top:interleaver_U2|PPBuffer:PingPongBuffer_inst|SDPR:BankB|altsyncram:altsyncram_component|altsyncram_b432:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[1] => ram_block1a0.PORTAADDR1
 address_a[2] => ram_block1a0.PORTAADDR2
@@ -886,7 +886,7 @@ wren_a => ram_block1a0.PORTAWE
 wren_a => ram_block1a0.ENA0
 
 
-|WiMAX_PHY_top_verify|WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3
+|wimax_top_wrapper|WiMAX_PHY_top:WiMAX_PHY_U0|qpsk_MOD:qpsk_MOD_U3
 Reset_N => ready_out.IN0
 Reset_N => valid_out~reg0.ACLR
 Reset_N => Q_comp[0]~reg0.ACLR

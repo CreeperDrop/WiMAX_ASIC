@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Successful - Sun Dec  8 12:47:07 2024
+Analysis & Synthesis Status : Successful - Sun Dec  8 22:14:26 2024
 Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : WiMAX_veriPHY
-Top-level Entity Name : WiMAX_PHY_top_verify
+Top-level Entity Name : wimax_top_wrapper
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 211

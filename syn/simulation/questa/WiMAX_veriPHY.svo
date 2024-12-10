@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition"
 
-// DATE "12/08/2024 12:47:59"
+// DATE "12/08/2024 22:15:27"
 
 // 
 // Device: Altera 5CEBA4F23C7 Package FBGA484
@@ -29,7 +29,7 @@
 
 `timescale 1 ps/ 1 ps
 
-module WiMAX_PHY_top_verify (
+module wimax_top_wrapper (
 	clk_ref,
 	reset_N,
 	load,
@@ -38,14 +38,14 @@ module WiMAX_PHY_top_verify (
 	fec_pass,
 	interleaver_pass,
 	modulator_pass);
-input 	logic clk_ref ;
-input 	logic reset_N ;
-input 	logic load ;
-input 	logic en ;
-output 	logic prbs_pass ;
-output 	logic fec_pass ;
-output 	logic interleaver_pass ;
-output 	logic modulator_pass ;
+input 	clk_ref;
+input 	reset_N;
+input 	load;
+input 	en;
+output 	prbs_pass;
+output 	fec_pass;
+output 	interleaver_pass;
+output 	modulator_pass;
 
 // Design Ports Information
 // prbs_pass	=>  Location: PIN_AA2,	 I/O Standard: 2.5 V,	 Current Strength: Default

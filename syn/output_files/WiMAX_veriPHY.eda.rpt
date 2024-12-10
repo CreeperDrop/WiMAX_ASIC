@@ -1,5 +1,5 @@
 EDA Netlist Writer report for WiMAX_veriPHY
-Sun Dec  8 12:47:59 2024
+Sun Dec  8 22:15:27 2024
 Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
@@ -37,9 +37,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Dec  8 12:47:59 2024 ;
+; EDA Netlist Writer Status ; Successful - Sun Dec  8 22:15:27 2024 ;
 ; Revision Name             ; WiMAX_veriPHY                         ;
-; Top-level Entity Name     ; WiMAX_PHY_top_verify                  ;
+; Top-level Entity Name     ; wimax_top_wrapper                     ;
 ; Family                    ; Cyclone V                             ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -81,13 +81,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
-    Info: Processing started: Sun Dec  8 12:47:58 2024
+    Info: Processing started: Sun Dec  8 22:15:26 2024
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off WiMAX_veriPHY -c WiMAX_veriPHY
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file WiMAX_veriPHY.svo in folder "D:/Study/FALL2024/ECNG 4104/Project/Phase3/syn/simulation/questa/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4795 megabytes
-    Info: Processing ended: Sun Dec  8 12:47:59 2024
+    Info: Processing ended: Sun Dec  8 22:15:27 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

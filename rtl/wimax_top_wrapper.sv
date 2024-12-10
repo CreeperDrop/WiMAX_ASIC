@@ -8,7 +8,7 @@
 
 import Package_wimax::*; 
 
-module WiMAX_PHY_top_verify(
+module wimax_top_wrapper(
     input  logic clk_ref,        // Reference (50 MHz)
     input  logic reset_N,        // Reset (active low)
     input  logic load,           // load for PRBS to load seed
